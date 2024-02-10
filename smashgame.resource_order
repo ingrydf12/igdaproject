@@ -19,10 +19,13 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"scr_inimigo","order":1,"path":"scripts/scr_inimigo/scr_inimigo.yy",},
     {"name":"splayer2","order":1,"path":"sprites/splayer2/splayer2.yy",},
     {"name":"obj_player2","order":1,"path":"objects/obj_player2/obj_player2.yy",},
+    {"name":"obj_colisor","order":4,"path":"objects/obj_colisor/obj_colisor.yy",},
     {"name":"senemytest","order":2,"path":"sprites/senemytest/senemytest.yy",},
+    {"name":"obj_rastro","order":5,"path":"objects/obj_rastro/obj_rastro.yy",},
     {"name":"rinicio","order":1,"path":"rooms/rinicio/rinicio.yy",},
-    {"name":"obJ_enemy","order":2,"path":"objects/obJ_enemy/obJ_enemy.yy",},
+    {"name":"scolisor","order":3,"path":"sprites/scolisor/scolisor.yy",},
   ],
 }
