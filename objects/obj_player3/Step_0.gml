@@ -1,7 +1,8 @@
-var cima = keyboard_check(vk_up);
-var baixo = keyboard_check(vk_down);
-var esquerda = keyboard_check(vk_left);
-var direita = keyboard_check(vk_right);
+//controles
+var cima = keyboard_check(ord("I"));
+var baixo = keyboard_check(ord("K"));
+var esquerda = keyboard_check(ord("J"));
+var direita = keyboard_check(ord("L"));
 
 var tecla = direita - esquerda != 0 || baixo - cima !=0;
 //retorno

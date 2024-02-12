@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_player2",
+  "name": "obj_player3",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "splayer2",
-    "path": "sprites/splayer2/splayer2.yy",
+    "name": "splayer3",
+    "path": "sprites/splayer3/splayer3.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -33,19 +33,19 @@ function andar() {
 
 	//retorno
 	if hspd != 0 or vspd != 0 {
-		if velm < wspd {
+		if spd < wspd {
 			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
 			_vulto.image_alpha = .09;
 			_vulto.sprite_index = sprite_index;
-			if velm < wspd/4 {
-				velm += .08;
-			} else if velm < wspd/2 {
-				velm += .2;
+			if spd < wspd/4 {
+				spd += .08;
+			} else if spd < wspd/2 {
+				spd += .2;
 			} else {
 				_vulto = instance_create_layer(x, y, layer, obj_rastro);
 				_vulto.image_alpha = .12;
 				_vulto.sprite_index = sprite_index;
-				velm += .4;
+				spd += .4;
 			}
 		} else {
 			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
@@ -53,13 +53,13 @@ function andar() {
 			_vulto.sprite_index = sprite_index;
 		}
 	} else {
-		velm = 0;
+		spd = 0;
 	}
 	
 	dirspd = point_direction(x, y, x + hspd, y + vspd);
 	
-	hspd = lengthdir_x(velm, dirspd);
-	vspd = lengthdir_y(velm, dirspd);
+	hspd = lengthdir_x(spd, dirspd);
+	vspd = lengthdir_y(spd, dirspd);
 		
 	colisao();
 }

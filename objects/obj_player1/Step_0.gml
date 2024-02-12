@@ -1,1 +1,1 @@
-script_execute(estado);
+script_execute(andar);
