@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function colisao(){
+	#region Colisão Horizontal
+	//Colisão Horizontal (eixo x) do objeto -> Verifica se o objeto está a pelo menos 'hspd' (spd horizontal) de pixel do colisor
 	if place_meeting(x + hspd, y, obj_colisor) {
 		while !place_meeting(x + sign(hspd), y, obj_colisor) {
 			x += sign(hspd);
@@ -10,30 +12,32 @@ function colisao(){
 	}
 	
 	x += hspd;
+	#endregion Colisão Horizontal
 	
+	#region Colisão Vertical
 	if place_meeting(x, y + vspd, obj_colisor) {
 		while !place_meeting(x, y + sign(vspd), obj_colisor) {
 			y += sign(vspd);
 		}
 		
 		vspd = 0;
-	}	
+	}
+	
 	y += vspd;
+	#endregion Colisão Vertical
 }
 
-function andar() {
-	cima = keyboard_check(ord("W"));
-	baixo = keyboard_check(ord("S"));
-	esquerda = keyboard_check(ord("A"));
-	direita = keyboard_check(ord("D"));
-
+function andar() {	
+	//Direção do eixo (positivo ou negativo)
 	hspd = direita - esquerda;
 	vspd = baixo - cima;
-
-
-	//retorno
+	
+	#region Verificar Movimentação
+	//Verificar se o player está se movendo
 	if hspd != 0 or vspd != 0 {
+		//Se estiver, verificar a 'spd' do jogador
 		if spd < wspd {
+			//Se for menor que o limite (walk speed), criar um rastro inicial
 			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
 			_vulto.image_alpha = .09;
 			_vulto.sprite_index = sprite_index;
@@ -42,24 +46,30 @@ function andar() {
 			} else if spd < wspd/2 {
 				spd += .2;
 			} else {
+				//Se a 'spd' estiver na metade do limite, criar um rastro mais visível
 				_vulto = instance_create_layer(x, y, layer, obj_rastro);
 				_vulto.image_alpha = .12;
 				_vulto.sprite_index = sprite_index;
 				spd += .4;
 			}
 		} else {
+			//Se a 'spd' estiver no limite, criar um rastro altamente visível
 			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
 			_vulto.image_alpha = .26;
 			_vulto.sprite_index = sprite_index;
 		}
 	} else {
+		//Se não estiver em movimento, zerar a 'spd'
 		spd = 0;
 	}
+	#endregion Verificar Movimentação
 	
-	dirspd = point_direction(x, y, x + hspd, y + vspd);
+	//Define uma direção mais precisa de onde o jogador está se movendo através de um plano cartesiano e vetores
+	dir = point_direction(x, y, x + hspd, y + vspd);
 	
-	hspd = lengthdir_x(spd, dirspd);
-	vspd = lengthdir_y(spd, dirspd);
-		
+	hspd = lengthdir_x(spd, dir);
+	vspd = lengthdir_y(spd, dir);
+	//Aqui termina o código de direção do jogador
+	
 	colisao();
 }

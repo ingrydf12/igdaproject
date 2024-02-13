@@ -16,7 +16,6 @@
     {"name":"Sounds","order":1,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":14,"path":"folders/Sprites.yy",},
     {"name":"Timelines","order":6,"path":"folders/Timelines.yy",},
-    {"name":"group1","order":6,"path":"folders/Objects/group1.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_player","order":3,"path":"objects/obj_player/obj_player.yy",},

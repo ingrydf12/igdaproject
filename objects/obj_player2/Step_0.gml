@@ -1,13 +1,9 @@
-var cima = keyboard_check(vk_up);
-var baixo = keyboard_check(vk_down);
-var esquerda = keyboard_check(vk_left);
-var direita = keyboard_check(vk_right);
+//Definir as teclas das 4 direções
+cima = keyboard_check(vk_up);
+baixo = keyboard_check(vk_down);
+esquerda = keyboard_check(vk_left);
+direita = keyboard_check(vk_right);
 
-var tecla = direita - esquerda != 0 || baixo - cima !=0;
-//retorno
-dir = point_direction(0,0, direita - esquerda, baixo - cima); 
-hspd = lengthdir_x(spd * tecla, dir);
-vspd = lengthdir_y(spd * tecla, dir);
+// Inherit the parent event
+event_inherited();
 
-x = x + hspd;
-y = y + vspd;
