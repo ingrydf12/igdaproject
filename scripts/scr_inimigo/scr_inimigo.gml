@@ -1,4 +1,7 @@
+///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS INIMIGOS, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
+
 function colisao_inimigo(){
+	
 	#region Colisão Horizontal
 	//Colisão Horizontal (eixo x) do objeto -> Verifica se o objeto está a pelo menos 'hspd' (spd horizontal) de pixel do colisor
 	if place_meeting(x + hspd, y, obj_colisor) {
@@ -33,11 +36,10 @@ function colisao_inimigo(){
 }
 
 function spd_inimigo() {
+	//Mesma lógica do script do jogador, só muda uns valores de subtração
 	if point_distance(x, y, dest_x, dest_y) > 2 {
 		if hspd != 0 or vspd != 0 {
-			//A velocidade (spd) do inimigo aumenta conforme ele anda até o limite
-			if spd < wspd {
-				//Efeito de 'movimentação' -> Cria um rastro dando a ideia de movimento no objeto
+				if spd < wspd {
 				var _vulto = instance_create_layer(x, y, layer, obj_rastro);
 				_vulto.image_alpha = .09;
 				_vulto.sprite_index = sprite_index;
@@ -67,8 +69,7 @@ function escolher_estado() {
 	prox_estado = choose(inimigo_andar, inimigo_parado);
 	
 	if prox_estado == inimigo_andar {
-		spd = 0;
-		//Atualiza o estado do player para "andar" e define o ponto x e y aleatório da sala pra se locomover
+		//Atualiza o estado do player para "andar" e define um ponto (x e y) aleatório da sala pra se locomover
 		estado = inimigo_andar;
 		dest_x = irandom_range(0, room_width);
 		dest_y = irandom_range(0, room_height);
@@ -101,6 +102,7 @@ function inimigo_andar(){
 	if point_distance(x, y, dest_x, dest_y) > 2 {
 		spd_inimigo();
 		
+		//Mesma lógica do script do jogador
 		dir = point_direction(x, y, dest_x, dest_y);
 		hspd = lengthdir_x(spd, dir);
 		vspd = lengthdir_y(spd, dir);
@@ -115,6 +117,8 @@ function inimigo_andar(){
 
 function inimigo_parado() {
 	est = "parar"; //Valor de debug visual
+	
+	spd = 0;
 	checar_player();
 	
 	image_speed = .8;
@@ -123,7 +127,6 @@ function inimigo_parado() {
 function checar_player() {
 	//Verifica se o jogador está dentro da área de perseguição do inimigo
 	if distance_to_object(obj_player1) <= dist_perigo {
-		spd = 0;
 		estado = inimigo_perseguir;
 	}
 }
@@ -137,7 +140,6 @@ function inimigo_perseguir() {
 	
 	spd_inimigo();
 	
-	//Mesma lógica do script do jogador
 	dir = point_direction(x, y, dest_x, dest_y);
 	hspd = lengthdir_x(spd, dir);
 	vspd = lengthdir_y(spd, dir);

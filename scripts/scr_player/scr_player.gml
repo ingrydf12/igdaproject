@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS PLAYER, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
+
 function colisao(){
 	#region Colisão Horizontal
 	//Colisão Horizontal (eixo x) do objeto -> Verifica se o objeto está a pelo menos 'hspd' (spd horizontal) de pixel do colisor
@@ -27,20 +27,18 @@ function colisao(){
 	#endregion Colisão Vertical
 }
 
-function andar() {	
-	//Direção do eixo (positivo ou negativo)
-	hspd = direita - esquerda;
-	vspd = baixo - cima;
-	
-	#region Verificar Movimentação
-	//Verificar se o player está se movendo
+function spd_player() {
+	//Verifica se o player está se movendo (horizontalmente ou verticalmente)
 	if hspd != 0 or vspd != 0 {
+		
 		//Se estiver, verificar a 'spd' do jogador
 		if spd < wspd {
-			//Se for menor que o limite (walk speed), criar um rastro inicial
+			//Efeito de 'movimentação' -> Cria um rastro dando a ideia de movimento no objeto
+			//Se for menor que o limite (walk speed), criar um rastro inicial (Efeito de 'movimentação')
 			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
 			_vulto.image_alpha = .09;
 			_vulto.sprite_index = sprite_index;
+			//Verifica a porcentagem da 'spd' do player, e se for menor que 50% do limite (wspd/2), então apenas aumentar gradativamente a 'spd' do jogador
 			if spd < wspd/4 {
 				spd += .08;
 			} else if spd < wspd/2 {
@@ -52,6 +50,7 @@ function andar() {
 				_vulto.sprite_index = sprite_index;
 				spd += .4;
 			}
+			
 		} else {
 			//Se a 'spd' estiver no limite, criar um rastro altamente visível
 			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
@@ -62,7 +61,15 @@ function andar() {
 		//Se não estiver em movimento, zerar a 'spd'
 		spd = 0;
 	}
-	#endregion Verificar Movimentação
+}
+
+function andar() {	
+	//Direção do eixo (positivo ou negativo)
+	hspd = direita - esquerda;
+	vspd = baixo - cima;
+	
+	//Verificar se o player está se movendo
+	spd_player();
 	
 	//Define uma direção mais precisa de onde o jogador está se movendo através de um plano cartesiano e vetores
 	dir = point_direction(x, y, x + hspd, y + vspd);
