@@ -42,6 +42,7 @@
     {"id":{"name":"obj_multi_manager","path":"objects/obj_multi_manager/obj_multi_manager.yy",},},
     {"id":{"name":"obj_player2","path":"objects/obj_player2/obj_player2.yy",},},
     {"id":{"name":"obj_colisor","path":"objects/obj_colisor/obj_colisor.yy",},},
+    {"id":{"name":"obj_mapa","path":"objects/obj_mapa/obj_mapa.yy",},},
     {"id":{"name":"scr_hp","path":"scripts/scr_hp/scr_hp.yy",},},
     {"id":{"name":"senemytest","path":"sprites/senemytest/senemytest.yy",},},
     {"id":{"name":"splayer1","path":"sprites/splayer1/splayer1.yy",},},

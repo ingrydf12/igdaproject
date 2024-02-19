@@ -23,6 +23,7 @@
     {"name":"splayer2","order":1,"path":"sprites/splayer2/splayer2.yy",},
     {"name":"obj_player2","order":2,"path":"objects/obj_player2/obj_player2.yy",},
     {"name":"obj_colisor","order":4,"path":"objects/obj_colisor/obj_colisor.yy",},
+    {"name":"obj_mapa","order":1,"path":"objects/obj_mapa/obj_mapa.yy",},
     {"name":"scr_hp","order":2,"path":"scripts/scr_hp/scr_hp.yy",},
     {"name":"senemytest","order":2,"path":"sprites/senemytest/senemytest.yy",},
     {"name":"obj_rastro","order":5,"path":"objects/obj_rastro/obj_rastro.yy",},

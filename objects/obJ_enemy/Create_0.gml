@@ -12,14 +12,23 @@ dest_x = -1; //ponto x de destino
 dest_y = -1; //ponto y de destino
 #endregion MOVIMENTAÇÂO//////////////
 
+#region MP_GRID (IA DE CAMINHO)
+caminho = path_add();
+#endregion MP_GRID (IA DE CAMINHO)
+
 #region STATE MACHINE///////////////
 alarm[0] = 1;
 estado = escolher_estado; //estado do inimigo (andando, parado, ataque...)
 prox_estado = -1; //próximo estado a ser executado
 est = -1; //dado para debug visual
 
-dist_perigo = 200; //distância para perseguir jogador
-dist_segura = 230; //distância para esquecer do jogador
+dist_perigo_perseg = 380; //distância para perseguir jogador caso já tenha o visto
+dist_perigo_inicial = 200; //distância para perseguir jogador padrão
+
+dist_perigo = dist_perigo_inicial; 
+dist_segura = 320; //distância para esquecer do jogador
+
+colision_line = -1;
 #endregion STATE MACHINE///////////////
 
 //STATUS

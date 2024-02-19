@@ -1,5 +1,6 @@
 ///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS INIMIGOS, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
 
+#region FUNCIONALIDADES INIMIGO
 function colisao_inimigo(){
 	
 	#region Colisão Horizontal
@@ -39,7 +40,7 @@ function spd_inimigo() {
 	//Mesma lógica do script do jogador, só muda uns valores de subtração
 	if point_distance(x, y, dest_x, dest_y) > 2 {
 		if hspd != 0 or vspd != 0 {
-				if spd < wspd {
+			if spd < wspd {
 				var _vulto = instance_create_layer(x, y, layer, obj_rastro);
 				_vulto.image_alpha = .09;
 				_vulto.sprite_index = sprite_index;
@@ -60,7 +61,20 @@ function spd_inimigo() {
 			}
 		} else {
 			spd = 0;
+			path_end();
 		}
+	}
+}
+
+function checar_player() {
+	//Verifica se o jogador está dentro da área de perseguição do inimigo
+	var _p = instance_nearest(x, y, obj_player);
+	//Desenha uma linha do inimigo até o jogador mais próximo e verifica se ela colide em um colisor, retorna true ou false
+	colision_line = collision_line(x, y, _p.x, _p.y, obj_colisor, true, false);
+	
+	//Verifica se o jogador mais próximo está na área de perigo do inimigo e se ele não está atrás de uma parede
+	if distance_to_object(_p) <= dist_perigo and !colision_line {
+		estado = inimigo_perseguir;
 	}
 }
 
@@ -68,32 +82,23 @@ function escolher_estado() {
 	//Estado a ser executado pelo inimigo;
 	prox_estado = choose(inimigo_andar, inimigo_parado);
 	
-	if prox_estado == inimigo_andar {
-		//Atualiza o estado do player para "andar" e define um ponto (x e y) aleatório da sala pra se locomover
-		estado = inimigo_andar;
-		dest_x = irandom_range(0, room_width);
-		dest_y = irandom_range(0, room_height);
-	} else if prox_estado == inimigo_parado {
-		estado = inimigo_parado;
+	switch prox_estado {
+		default: //Parado
+			estado = inimigo_parado;
+		break;
+		case inimigo_andar: //Andar
+			//Atualiza o estado do player para "andar" e define um ponto (x e y) aleatório da sala pra se locomover
+			estado = inimigo_andar;
+			
+			var tam = obj_mapa.tam_cell; //Tamanho da célula
+			dest_x = (irandom_range(0, room_width) div tam) * tam + tam/2;
+			dest_y = (irandom_range(0, room_height) div tam) * tam + tam/2;
+		break;
 	}
-	
-	//switch prox_estado {
-	//	default:
-	//		est = "parado";
-	//		alarm[0] = irandom_range(120, 600);
-	//		estado = inimigo_parado;
-	//	break;
-	//	case inimigo_andar:
-	//		est = "andar";
-	//		estado = inimigo_andar;
-	//		dest_x = irandom_range(0, room_width);
-	//		dest_y = irandom_range(0, room_height);
-	//	break;
-	//}
 }
+#endregion FUNCIONALIDADES INIMIGO
 
-
-
+#region ESTADOS INIMIGO
 function inimigo_andar(){
 	est = "andar"; //Valor de debug visual
 	checar_player();
@@ -102,14 +107,27 @@ function inimigo_andar(){
 	if point_distance(x, y, dest_x, dest_y) > 2 {
 		spd_inimigo();
 		
-		//Mesma lógica do script do jogador
+		var _p = instance_nearest(x, y, obj_player);
+		var tam = obj_mapa.tam_cell; //Tamanho da célula
+	
+		var x1 = x; //X inicial
+		var y1 = y; //Y inicial
+	
+		spd_inimigo(); //Verificar movimentação
+	
 		dir = point_direction(x, y, dest_x, dest_y);
 		hspd = lengthdir_x(spd, dir);
 		vspd = lengthdir_y(spd, dir);
-		
-		colisao_inimigo();
+	
+		//colisao_inimigo();
+	
+		//Caminho a ser seguido pelo inimigo
+		if mp_grid_path(obj_mapa.grid_mapa,caminho,x1,y1,dest_x,dest_y,true) {
+			path_start(caminho,spd,path_action_stop, false);
+		}
 		
 	} else {
+		path_end();
 		x = dest_x;
 		y = dest_y;
 	}
@@ -117,37 +135,93 @@ function inimigo_andar(){
 
 function inimigo_parado() {
 	est = "parar"; //Valor de debug visual
-	
-	spd = 0;
 	checar_player();
 	
 	image_speed = .8;
 }
 
-function checar_player() {
-	//Verifica se o jogador está dentro da área de perseguição do inimigo
-	if distance_to_object(obj_player1) <= dist_perigo {
-		estado = inimigo_perseguir;
-	}
-}
-
 function inimigo_perseguir() {
+	dist_perigo = dist_perigo_perseg; //Aumentar o campo de visão para procurar o player
 	est = "perseg"; //Valor de debug visual
-	image_speed = 1.2;
+	image_speed = 1.2; //Taxa de frames da animação do sprite
 	
-	dest_x = obj_player1.x;
-	dest_y = obj_player1.y;
+	/* Inutilizável por hora
+	Checar se o player está longe ou atrás de uma parede
+	var _p = instance_nearest(x, y, obj_player);
+	colision_line = collision_line(x, y, _p.x, _p.y, obj_colisor, true, false);
 	
-	spd_inimigo();
+	if !colision_line {
+		dest_x = _p.x; //Destino x do inimigo (player x)
+		dest_y = _p.y; //Destino y do inimigo (player y)
+	}
+	
+	-----------------------*/ 
+	var _p = instance_nearest(x, y, obj_player);
+	var tam = obj_mapa.tam_cell; //Tamanho da célula
+	
+	var x1 = x; //X inicial
+	var y1 = y; //Y inicial
+	dest_x = (_p.x div tam) * tam + tam/2; //Destino x do inimigo (player x)
+	dest_y = (_p.y div tam) * tam + tam/2; //Destino y do inimigo (player y)
+	
+	spd_inimigo(); //Verificar movimentação
 	
 	dir = point_direction(x, y, dest_x, dest_y);
 	hspd = lengthdir_x(spd, dir);
 	vspd = lengthdir_y(spd, dir);
 	
-	colisao_inimigo();
+	//colisao_inimigo();
 	
-	if distance_to_object(obj_player1) >= dist_segura {
-		estado = escolher_estado;
+	//Caminho a ser seguido pelo inimigo
+	if mp_grid_path(obj_mapa.grid_mapa,caminho,x1,y1,dest_x,dest_y,true) {
+		path_start(caminho,spd,path_action_stop, false);
+	}
+	
+	colision_line = collision_line(x, y, _p.x, _p.y, obj_colisor, true, false);	
+	
+	if distance_to_object(_p) >= dist_segura or colision_line {
+		estado = pos_inimigo_perseg;
+	}
+}
+
+function pos_inimigo_perseg() {
+	est = "pos-perseg"; //Valor de debug visual
+	checar_player();
+	if point_distance(x, y, dest_x, dest_y) <= 2 {
+		x = dest_x;
+		y = dest_y;
+	}
+	
+	if x != dest_x and y != dest_y {
+	//if point_distance(x, y, dest_x, dest_y) > 2 {
+		alarm[0] = irandom_range(80, 300);
+		
+		spd_inimigo(); //Verificar movimentação
+		
+		var _p = instance_nearest(x, y, obj_player);
+		var tam = obj_mapa.tam_cell; //Tamanho da célula
+	
+		var x1 = x; //X inicial
+		var y1 = y; //Y inicial
+	
+		spd_inimigo(); //Verificar movimentação
+	
+		dir = point_direction(x, y, dest_x, dest_y);
+		hspd = lengthdir_x(spd, dir);
+		vspd = lengthdir_y(spd, dir);
+	
+		//colisao_inimigo();
+	
+		//Caminho a ser seguido pelo inimigo
+		if mp_grid_path(obj_mapa.grid_mapa,caminho,x1,y1,dest_x,dest_y,true) {
+			path_start(caminho,spd,path_action_stop, false);
+		}
+		
+	} else {
+		//show_message("oi")
+		path_end();
+		estado = inimigo_parado;
 		alarm[0] = irandom_range(80, 300);
 	}
 }
+#endregion ESTADOS INIMIGO
