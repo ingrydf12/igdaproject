@@ -12,3 +12,8 @@ Movimentação inimigo:
 	local que avistou o player, ficar parado para ver se encontra ele novamente e depois
 	entrar no modo de 'escolha de estados' novamente;
 	-Diminuir o raio de alcance para o padrão;
+-Inimigo sofrer dano:
+	-Perder vida após a hitbox de ataque acertar;
+	-Tomar um 'knockback' para trás após o dano;
+	-Piscar para indicar que tomou dano;
+	-Chegar em 0 falecer;

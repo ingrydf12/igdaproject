@@ -27,6 +27,3 @@ dir_atk = -1;
 ataque = false;
 tecla_atk = "";
 #endregion STATUS PLAYER ///////////////////////////
-
-//debug
-global.debug = false;

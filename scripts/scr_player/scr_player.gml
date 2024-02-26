@@ -84,25 +84,6 @@ function andar() {
 		dir_atk = 3;
 	}
 	
-	//switch keyboard_lastkey {
-	//	case ord("S"):
-	//		sprite_index = sjoa_idledown;
-	//		dir_atk = ord("S");
-	//	break;
-	//	case ord("A"):
-	//		sprite_index = sjoa_idleleft;
-	//		dir_atk = ord("A");
-	//	break;
-	//	case ord("D"):
-	//		sprite_index = sjoa_idleright;
-	//		dir_atk = ord("D");
-	//	break;
-	//	case ord("W"):
-	//		sprite_index = sjoa_idleup;
-	//		dir_atk = ord("W");
-	//	break;
-	//} -----> Não funciona em 2 players ou mais
-	
 	//Direção do eixo (positivo ou negativo)
 	hspd = direita - esquerda;
 	vspd = baixo - cima;
@@ -119,8 +100,27 @@ function andar() {
 	
 	colisao();
 	
-	//Verificar tecla de ataque (tecla 'X')
-	if keyboard_check_pressed(ord(tecla_atk)) and ataque == false {
+	//Verificar tecla de ataque (tecla 'X' ou 'L')
+	if keyboard_check_pressed(ord(tecla_atk)) and alarm[1] <= 0 {
+		image_index = 0; //Resetar frame da animação
+		
+		//Mudar a sprite de acordo com a direção que o player está olhando
+		switch dir_atk {
+			case 0: //Direita
+				sprite_index = sjoa_atkright;
+			break;
+			case 2: //Esquerda
+				sprite_index = sjoa_atkleft;
+			break;
+			case 1: //Cima
+				sprite_index = sjoa_atkup;
+			break;
+			case 3: //Baixo
+				sprite_index = sjoa_atkdown;
+			break;
+		}
+		
+		//Mudar para o estado de atacar
 		estado = atacar;
 	}
 }
@@ -129,18 +129,44 @@ function atacar() {
 	if ataque == false {
 		switch dir_atk {
 			case 0: //Direita
+				var _i = instance_create_layer(x + 40, y + 20, layer, obj_hitatk_rl);
+				_i.jogador_id = self;
+			break;
 			case 2: //Esquerda
-				sprite_index = ataque_joaspr;
+				_i = instance_create_layer(x - 40, y + 20, layer, obj_hitatk_rl);
+				_i.jogador_id = self;
 			break;
 			case 1: //Cima
-				sprite_index = ataqueup_joaspr;
+				_i = instance_create_layer(x, y - 40, layer, obj_hitatk_ud);
+				_i.jogador_id = self;
 			break;
 			case 3: //Baixo
-				sprite_index = ataquedown_joaspr;
+				_i = instance_create_layer(x, y + 60, layer, obj_hitatk_ud);
+				_i.jogador_id = self;
 			break;
 		}
 		
 		ataque = true;
-		alarm[1] = 180;
+	}
+	
+	if fim_animacao() {
+		//Mudar para o estado de andar
+		estado = andar;
+		switch dir_atk {
+			case 0: //Direita
+				sprite_index = sjoa_idleright;
+			break;
+			case 2: //Esquerda
+				sprite_index = sjoa_idleleft;
+			break;
+			case 1: //Cima
+				sprite_index = sjoa_idleup;
+			break;
+			case 3: //Baixo
+				sprite_index = sjoa_idledown;
+			break;
+		}
+		
+		ataque = false;
 	}
 }

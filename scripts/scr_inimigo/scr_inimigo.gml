@@ -96,6 +96,7 @@ function escolher_estado() {
 		break;
 	}
 }
+
 #endregion FUNCIONALIDADES INIMIGO
 
 #region ESTADOS INIMIGO
@@ -142,6 +143,7 @@ function inimigo_parado() {
 
 function inimigo_perseguir() {
 	dist_perigo = dist_perigo_perseg; //Aumentar o campo de visão para procurar o player
+	dist_segura = dist_perigo + 40;
 	est = "perseg"; //Valor de debug visual
 	image_speed = 1.2; //Taxa de frames da animação do sprite
 	
@@ -177,11 +179,27 @@ function inimigo_perseguir() {
 		path_start(caminho,spd,path_action_stop, false);
 	}
 	
+	//EMPURRÃO
+	if hit == true {
+		path_end();
+		knockback_dir = lerp(knockback_spd, 0, .25);
+	
+		hspd = lengthdir_x(knockback_spd, knockback_dir);
+		vspd = lengthdir_y(knockback_spd, knockback_dir);
+		
+		if !place_meeting(x, y, obj_colisor) {
+			colisao_inimigo();
+		}
+	}
+	////////////////////
+	
 	colision_line = collision_line(x, y, _p.x, _p.y, obj_colisor, true, false);	
 	
-	if distance_to_object(_p) > dist_perigo or colision_line {
+	if distance_to_object(_p) > dist_segura or colision_line {
 		estado = pos_inimigo_perseg;
 	}
+	
+	alarm[0] = irandom_range(80, 300);
 }
 
 function pos_inimigo_perseg() {

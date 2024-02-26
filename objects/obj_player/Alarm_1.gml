@@ -1,3 +1,2 @@
-/// @description Insert description here
-estado = andar;
+/// @description Cooldown ataque
 ataque = !ataque;

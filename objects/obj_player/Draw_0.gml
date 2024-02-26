@@ -5,9 +5,9 @@ if hit == true {
 } else {
 	draw_self(); // Desenhar o próprio jogador
 }
-if global.debug {
-	draw_set_color(c_black);
-	draw_rectangle(x - 20, y + 30, x + 20, y + 35, false); // Barra de vida preta
-	draw_set_color(c_lime); // Cor verde para a barra de vida
-	draw_rectangle(x - 20, y + 30, x - 20 + (hp_atual / hp_max) * 40, y + 35, false); // Barra de vida verde
-}
+
+draw_set_color(c_black);
+draw_rectangle(x - 20, y + 30, x + 20, y + 35, false); // Barra de vida preta
+draw_set_color(c_lime); // Cor verde para a barra de vida
+draw_rectangle(x - 20, y + 30, x - 20 + (hp_atual / hp_max) * 40, y + 35, false); // Barra de vida verde
+draw_set_color(c_white);

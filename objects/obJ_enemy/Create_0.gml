@@ -26,11 +26,16 @@ dist_perigo_perseg = 380; //distância para perseguir jogador caso já tenha o v
 dist_perigo_inicial = 200; //distância para perseguir jogador padrão
 
 dist_perigo = dist_perigo_inicial; 
-dist_segura = 320; //distância para esquecer do jogador
+dist_segura = dist_perigo + 40; //distância para esquecer do jogador
 
 colision_line = -1;
 #endregion STATE MACHINE///////////////
 
 //STATUS
-vida_maxima = 5;
-vida = vida_maxima; //vida inicial
+hit = false;
+vida_maxima = 100;
+vida_atual = vida_maxima; //vida inicial
+
+//empurrão
+knockback_dir = -1;
+knockback_spd = -1;
