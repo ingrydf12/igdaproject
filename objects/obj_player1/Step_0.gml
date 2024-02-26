@@ -27,7 +27,7 @@ if (hp_atual <= 0) {
     instance_destroy(); // Destruir o objeto do jogador ou executar alguma outra ação de morte
 }
 
-// Exemplo de uma condição para perder vida (por exemplo, se o jogador colidir com um inimigo)
+// Exemplo de uma condição para perder vida
 if (place_meeting(x, y, obj_enemy)) {
-    hp_atual -= 10; // Perde 10 de vida se colidir com um inimigo (ajuste conforme necessário)
+    hp_atual -= 10; // Perde 10 de vida se colidir com um inimigo
 }
