@@ -1,5 +1,6 @@
 ///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS PLAYER, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
 
+#region COLISÃO
 function colisao(){
 	#region Colisão Horizontal
 	//Colisão Horizontal (eixo x) do objeto -> Verifica se o objeto está a pelo menos 'hspd' (spd horizontal) de pixel do colisor
@@ -26,7 +27,9 @@ function colisao(){
 	y += vspd;
 	#endregion Colisão Vertical
 }
+#endregion COLISÃO
 
+#region VERIFICAR VELOCIDADE
 function spd_player() {
 	//Verifica se o player está se movendo (horizontalmente ou verticalmente)
 	if hspd != 0 or vspd != 0 {
@@ -62,8 +65,44 @@ function spd_player() {
 		spd = 0;
 	}
 }
+#endregion VERIFICAR VELOCIDADE
 
-function andar() {	
+function andar() {
+	
+	//Verificar se está andando para alguma direção e dizer seu quadrante
+	if direita {
+		sprite_index = sjoa_idleright;
+		dir_atk = 0;
+	} else if cima {
+		sprite_index = sjoa_idleup;
+		dir_atk = 1;
+	} else if esquerda {
+		sprite_index = sjoa_idleleft;
+		dir_atk = 2;
+	} else if baixo {
+		sprite_index = sjoa_idledown;
+		dir_atk = 3;
+	}
+	
+	//switch keyboard_lastkey {
+	//	case ord("S"):
+	//		sprite_index = sjoa_idledown;
+	//		dir_atk = ord("S");
+	//	break;
+	//	case ord("A"):
+	//		sprite_index = sjoa_idleleft;
+	//		dir_atk = ord("A");
+	//	break;
+	//	case ord("D"):
+	//		sprite_index = sjoa_idleright;
+	//		dir_atk = ord("D");
+	//	break;
+	//	case ord("W"):
+	//		sprite_index = sjoa_idleup;
+	//		dir_atk = ord("W");
+	//	break;
+	//} -----> Não funciona em 2 players ou mais
+	
 	//Direção do eixo (positivo ou negativo)
 	hspd = direita - esquerda;
 	vspd = baixo - cima;
@@ -79,5 +118,29 @@ function andar() {
 	//Aqui termina o código de direção do jogador
 	
 	colisao();
+	
+	//Verificar tecla de ataque (tecla 'X')
+	if keyboard_check_pressed(ord(tecla_atk)) and ataque == false {
+		estado = atacar;
+	}
 }
 
+function atacar() {
+	if ataque == false {
+		switch dir_atk {
+			case 0: //Direita
+			case 2: //Esquerda
+				sprite_index = ataque_joaspr;
+			break;
+			case 1: //Cima
+				sprite_index = ataqueup_joaspr;
+			break;
+			case 3: //Baixo
+				sprite_index = ataquedown_joaspr;
+			break;
+		}
+		
+		ataque = true;
+		alarm[1] = 180;
+	}
+}

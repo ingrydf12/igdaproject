@@ -4,6 +4,8 @@
   "name": "obj_player2",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -31,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "splayer2",
-    "path": "sprites/splayer2/splayer2.yy",
+    "name": "sjoa_idledown",
+    "path": "sprites/sjoa_idledown/sjoa_idledown.yy",
   },
   "spriteMaskId": null,
   "visible": true,

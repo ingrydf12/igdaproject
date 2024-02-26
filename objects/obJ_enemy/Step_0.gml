@@ -1,4 +1,4 @@
 /// @description Insert description here
-script_execute(estado);
-
-if keyboard_check_pressed(ord("R")) {game_restart()}
+if instance_exists(obj_player) {
+	script_execute(estado);
+}

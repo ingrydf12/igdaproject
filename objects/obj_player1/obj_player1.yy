@@ -5,7 +5,6 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -33,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "default_joaspr",
-    "path": "sprites/default_joaspr/default_joaspr.yy",
+    "name": "sjoa_idledown",
+    "path": "sprites/sjoa_idledown/sjoa_idledown.yy",
   },
   "spriteMaskId": null,
   "visible": true,

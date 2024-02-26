@@ -179,7 +179,7 @@ function inimigo_perseguir() {
 	
 	colision_line = collision_line(x, y, _p.x, _p.y, obj_colisor, true, false);	
 	
-	if distance_to_object(_p) >= dist_segura or colision_line {
+	if distance_to_object(_p) > dist_perigo or colision_line {
 		estado = pos_inimigo_perseg;
 	}
 }

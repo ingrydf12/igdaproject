@@ -1,0 +1,14 @@
+Movimentação inimigo:
+-O inimigo pode escolher entre 2 estados naturais:
+	-Andar livremente pela room;
+	-Ficar parado;
+-O inimigo precisa localizar um player mais próximo a ele:
+	-No estado de parado e andar precisa de um script para checar se há um player
+	dentro do raio de alcance do inimigo;
+	-Quando localizar um player entrar no modo de perseguição e aumentar o raio
+	de alcance;
+-O inimigo precisa 'perder' o player de vista:
+	-Quando o player sair do campo de visão do inimigo o inimigo deve ir até o último
+	local que avistou o player, ficar parado para ver se encontra ele novamente e depois
+	entrar no modo de 'escolha de estados' novamente;
+	-Diminuir o raio de alcance para o padrão;
