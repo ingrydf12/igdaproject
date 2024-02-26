@@ -4,6 +4,8 @@
   "name": "obj_player1",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -31,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "splayer1",
-    "path": "sprites/splayer1/splayer1.yy",
+    "name": "default_joaspr",
+    "path": "sprites/default_joaspr/default_joaspr.yy",
   },
   "spriteMaskId": null,
   "visible": true,
