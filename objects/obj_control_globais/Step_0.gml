@@ -6,9 +6,9 @@ if keyboard_check(vk_lcontrol) and keyboard_check_released(vk_backspace) {
 	global.debug = !global.debug;
 }
 
-if global.debug {
+if global.debug and keyboard_check(vk_lcontrol) {
 	if keyboard_check_pressed(ord("R")) {game_restart()}
-	if keyboard_check(vk_lcontrol) and keyboard_check_pressed(vk_add) {
+	if keyboard_check_pressed(vk_add) {
 		var _p = show_question("Qual player? (1 = Yes/2 = No)");
 		switch _p {
 			default:

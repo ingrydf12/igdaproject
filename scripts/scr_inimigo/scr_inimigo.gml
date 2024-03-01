@@ -147,17 +147,6 @@ function inimigo_perseguir() {
 	est = "perseg"; //Valor de debug visual
 	image_speed = 1.2; //Taxa de frames da animação do sprite
 	
-	/* Inutilizável por hora
-	Checar se o player está longe ou atrás de uma parede
-	var _p = instance_nearest(x, y, obj_player);
-	colision_line = collision_line(x, y, _p.x, _p.y, obj_colisor, true, false);
-	
-	if !colision_line {
-		dest_x = _p.x; //Destino x do inimigo (player x)
-		dest_y = _p.y; //Destino y do inimigo (player y)
-	}
-	
-	-----------------------*/ 
 	var _p = instance_nearest(x, y, obj_player);
 	var tam = obj_mapa.tam_cell; //Tamanho da célula
 	
@@ -236,7 +225,6 @@ function pos_inimigo_perseg() {
 		}
 		
 	} else {
-		//show_message("oi")
 		path_end();
 		estado = inimigo_parado;
 		alarm[0] = irandom_range(80, 300);

@@ -1,0 +1,8 @@
+Spawn de Inimigos:
+	-Por waves;*
+	-Definir quantia de inimigos máximos na tela;
+	-Definir uma quantia de inimigos máximos que serão spawnados;*
+	-Colocar pontos específicos na room para spawnar os inimigos;
+	-Não spawnar inimigos muito próximos ao player;
+	-Definir um timer para spawn dos inimigos;
+	-Definir qual inimigo deve ser spawnado;*

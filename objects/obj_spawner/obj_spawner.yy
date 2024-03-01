@@ -2,12 +2,14 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_spawner",
-  "eventList": [],
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "System",
-    "path": "folders/Objects/System.yy",
+    "name": "Spawn",
+    "path": "folders/Objects/System/Spawn.yy",
   },
   "parentObjectId": null,
   "persistent": false,

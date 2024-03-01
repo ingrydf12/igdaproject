@@ -1,0 +1,10 @@
+Tradução de teclas:
+	-LCrtl -> Left Control
+	-Backspace -> Tecla de Apagar
+	-Add -> Botão de adicionar do numpad (+)
+Tecla de (des)ativação:
+	'LCtrl' + 'Backspace'
+Funções de debug: (quando ativado)
+	-Reiniciar jogo: 'LCrtl' + 'R'
+	-Criação de um player (1 e 2): 'LCtrl' + 'Add'
+	-Variáveis Globais: 'LCtrl' + ''
