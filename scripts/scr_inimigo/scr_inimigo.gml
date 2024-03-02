@@ -171,7 +171,7 @@ function inimigo_perseguir() {
 	//EMPURRÃO
 	if hit == true {
 		path_end();
-		knockback_dir = lerp(knockback_spd, 0, .25);
+		knockback_spd = lerp(knockback_spd, 0, .15);
 	
 		hspd = lengthdir_x(knockback_spd, knockback_dir);
 		vspd = lengthdir_y(knockback_spd, knockback_dir);

@@ -1,4 +1,4 @@
-///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS PLAYER, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
+	///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS PLAYER, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
 
 #region COLISÃO
 function colisao(){
@@ -130,19 +130,19 @@ function atacar() {
 		switch dir_atk {
 			case 0: //Direita
 				var _i = instance_create_layer(x + 40, y + 20, layer, obj_hitatk_rl);
-				_i.jogador_id = self;
+				_i.p_id = self;
 			break;
 			case 2: //Esquerda
 				_i = instance_create_layer(x - 40, y + 20, layer, obj_hitatk_rl);
-				_i.jogador_id = self;
+				_i.p_id = self;
 			break;
 			case 1: //Cima
 				_i = instance_create_layer(x, y - 40, layer, obj_hitatk_ud);
-				_i.jogador_id = self;
+				_i.p_id = self;
 			break;
 			case 3: //Baixo
 				_i = instance_create_layer(x, y + 60, layer, obj_hitatk_ud);
-				_i.jogador_id = self;
+				_i.p_id = self;
 			break;
 		}
 		
