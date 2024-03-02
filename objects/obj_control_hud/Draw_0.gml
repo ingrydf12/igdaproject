@@ -1,0 +1,1 @@
+draw_text(0,0,"Mortos: "+string(global.mortos)) //desenha o texto mais o numero de mortos na posição X e Y determinadas

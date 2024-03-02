@@ -1,0 +1,1 @@
+global.mortos+=1 //adiciona mais um a variavel mortos/hud

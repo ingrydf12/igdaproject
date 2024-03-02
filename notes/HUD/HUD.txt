@@ -1,0 +1,6 @@
+- HUD dos inimigos mortos pelo Player
+- HUD de Reinicio (Tela de GameOver após a morte do jogador)
+-> fonte: fonthud (Superstar)
+
+- Inicio do Jogo (Single ou Multiplayer Local)
+-> Apresentação dos controles para cada jogador
