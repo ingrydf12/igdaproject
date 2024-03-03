@@ -1,4 +1,4 @@
-	///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS PLAYER, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
+///@description SCRIPT VOLTADO PARA MONTAR E DESENVOLVER O CONJUNTO DE AÇÕES/ESTADOS DOS PLAYER, ASSIM COMO SEUS COMPLEMENTOS (COLISÃO, ALTERNÂNCIA DE 'SPD'...)
 
 #region COLISÃO
 function colisao(){
@@ -67,22 +67,133 @@ function spd_player() {
 }
 #endregion VERIFICAR VELOCIDADE
 
+#region MUDAR SPRITE
+function att_sprite_player(a) {
+	///@param {string} "string" Ação a ser executada: Ataque; Andar; Idle
+	switch a {
+		#region ATACAR
+		case "Ataque":
+			switch tecla_atk { //Verificar qual player vai atacar baseado na tecla de ataque
+				case "X":
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = sjoa_atkright;
+						break;
+						case 2: //Esquerda
+							sprite_index = sjoa_atkleft;
+						break;
+						case 1: //Cima
+							sprite_index = sjoa_atkup;
+						break;
+						case 3: //Baixo
+							sprite_index = sjoa_atkdown;
+						break;
+					}
+				break;
+				case "L": //Player 2
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = spoto_atkright;
+						break;
+						case 2: //Esquerda
+							sprite_index = spoto_atkleft;
+						break;
+						case 1: //Cima
+							sprite_index = spoto_atkup;
+						break;
+						case 3: //Baixo
+							sprite_index = spoto_atkdown;
+						break;
+					}
+				break
+			}
+		break;
+		#endregion ATACAR
+		#region ANDAR
+		case "Andar":
+			switch tecla_atk {
+				case "X": //Player 1 Andar
+					//Verificar se está andando para alguma direção e dizer seu quadrante
+					if direita {
+						sprite_index = sjoa_idleright;
+						dir_atk = 0;
+					} else if cima {
+						sprite_index = sjoa_idleup;
+						dir_atk = 1;
+					} else if esquerda {
+						sprite_index = sjoa_idleleft;
+						dir_atk = 2;
+					} else if baixo {
+						sprite_index = sjoa_idledown;
+						dir_atk = 3;
+					}
+				break;
+				case "L": //Player 2 Andar
+					//Verificar se está andando para alguma direção e dizer seu quadrante
+					if direita {
+						sprite_index = spoto_idleright;
+						dir_atk = 0;
+					} else if cima {
+						sprite_index = spoto_idleup;
+						dir_atk = 1;
+					} else if esquerda {
+						sprite_index = spoto_idleleft;
+						dir_atk = 2;
+					} else if baixo {
+						sprite_index = spoto_idledown;
+						dir_atk = 3;
+					}
+				break;
+			}
+			
+		break;
+		#endregion ANDAR
+		#region IDLE
+		case "Idle":
+			switch tecla_atk { //Verificar qual player está atacando baseado na tecla de ataque
+				case "X":
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = sjoa_idleright;
+						break;
+						case 2: //Esquerda
+							sprite_index = sjoa_idleleft;
+						break;
+						case 1: //Cima
+							sprite_index = sjoa_idleup;
+						break;
+						case 3: //Baixo
+							sprite_index = sjoa_idledown;
+						break;
+					}
+				break;
+				case "L": //Player 2
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = spoto_idleright;
+						break;
+						case 2: //Esquerda
+							sprite_index = spoto_idleleft;
+						break;
+						case 1: //Cima
+							sprite_index = spoto_idleup;
+						break;
+						case 3: //Baixo
+							sprite_index = spoto_idledown;
+						break;
+					}
+				break
+			}
+		break;
+		#endregion IDLE
+	}
+}
+#endregion MUDAR SPRITE
+
 function andar() {
 	
-	//Verificar se está andando para alguma direção e dizer seu quadrante
-	if direita {
-		sprite_index = sjoa_idleright;
-		dir_atk = 0;
-	} else if cima {
-		sprite_index = sjoa_idleup;
-		dir_atk = 1;
-	} else if esquerda {
-		sprite_index = sjoa_idleleft;
-		dir_atk = 2;
-	} else if baixo {
-		sprite_index = sjoa_idledown;
-		dir_atk = 3;
-	}
+	//Mudar sprite para andar
+	att_sprite_player("Andar");
 	
 	//Direção do eixo (positivo ou negativo)
 	hspd = direita - esquerda;
@@ -104,21 +215,8 @@ function andar() {
 	if keyboard_check_pressed(ord(tecla_atk)) and alarm[1] <= 0 {
 		image_index = 0; //Resetar frame da animação
 		
-		//Mudar a sprite de acordo com a direção que o player está olhando
-		switch dir_atk {
-			case 0: //Direita
-				sprite_index = sjoa_atkright;
-			break;
-			case 2: //Esquerda
-				sprite_index = sjoa_atkleft;
-			break;
-			case 1: //Cima
-				sprite_index = sjoa_atkup;
-			break;
-			case 3: //Baixo
-				sprite_index = sjoa_atkdown;
-			break;
-		}
+		//Mudar a sprite, para ataque, de acordo com a direção que o player está olhando
+		att_sprite_player("Ataque");
 		
 		//Mudar para o estado de atacar
 		estado = atacar;
@@ -126,46 +224,39 @@ function andar() {
 }
 
 function atacar() {
-	if ataque == false {
-		switch dir_atk {
-			case 0: //Direita
-				var _i = instance_create_layer(x + 40, y + 20, layer, obj_hitatk_rl);
-				_i.p_id = self;
-			break;
-			case 2: //Esquerda
-				_i = instance_create_layer(x - 40, y + 20, layer, obj_hitatk_rl);
-				_i.p_id = self;
-			break;
-			case 1: //Cima
-				_i = instance_create_layer(x, y - 40, layer, obj_hitatk_ud);
-				_i.p_id = self;
-			break;
-			case 3: //Baixo
-				_i = instance_create_layer(x, y + 60, layer, obj_hitatk_ud);
-				_i.p_id = self;
-			break;
+	if image_index >= 1 {
+		if ataque == false {
+			switch dir_atk {
+				case 0: //Direita
+					var _i = instance_create_layer(x + 40, y + 20, layer, obj_hitatk_rl);
+					_i.p_id = self;
+				break;
+				case 2: //Esquerda
+					_i = instance_create_layer(x - 40, y + 20, layer, obj_hitatk_rl);
+					_i.p_id = self;
+				break;
+				case 1: //Cima
+					_i = instance_create_layer(x, y - 40, layer, obj_hitatk_ud);
+					_i.p_id = self;
+				break;
+				case 3: //Baixo
+					_i = instance_create_layer(x, y + 60, layer, obj_hitatk_ud);
+					_i.p_id = self;
+				break;
+			}
+			
+			if image_index == 2 {
+				ataque = true;
+			}
 		}
-		
-		ataque = true;
 	}
 	
 	if fim_animacao() {
 		//Mudar para o estado de andar
 		estado = andar;
-		switch dir_atk {
-			case 0: //Direita
-				sprite_index = sjoa_idleright;
-			break;
-			case 2: //Esquerda
-				sprite_index = sjoa_idleleft;
-			break;
-			case 1: //Cima
-				sprite_index = sjoa_idleup;
-			break;
-			case 3: //Baixo
-				sprite_index = sjoa_idledown;
-			break;
-		}
+		
+		//Retornar ao sprite de idle
+		att_sprite_player("Idle");
 		
 		ataque = false;
 	}

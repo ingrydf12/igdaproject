@@ -23,6 +23,7 @@ hit = false; //verificar se foi acertado pelo inimigo
 hp_max = 100; // Define a vida máxima do jogador
 hp_atual = hp_max; // Define a vida atual do jogador como a vida máxima inicialmente
 
+dano = irandom_range(15, 25);
 dir_atk = -1;
 ataque = false;
 tecla_atk = "";

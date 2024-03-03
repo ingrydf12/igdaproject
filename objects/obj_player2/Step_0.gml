@@ -4,5 +4,6 @@ baixo = keyboard_check(vk_down);
 esquerda = keyboard_check(vk_left);
 direita = keyboard_check(vk_right);
 
-// Inherit the parent event
+dano = irandom_range(8, 18);
+
 event_inherited();
