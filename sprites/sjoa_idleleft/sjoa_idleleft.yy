@@ -48,8 +48,8 @@
   },
   "origin": 9,
   "parent": {
-    "name": "joaninha_spr",
-    "path": "folders/Sprites/joaninha_spr.yy",
+    "name": "Idle",
+    "path": "folders/Sprites/JoaninhaAnimacoes/Idle.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

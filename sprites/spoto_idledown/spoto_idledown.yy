@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "poto_spr",
-    "path": "folders/Sprites/poto_spr.yy",
+    "name": "Idle",
+    "path": "folders/Sprites/PotoAnimacoes/Idle.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

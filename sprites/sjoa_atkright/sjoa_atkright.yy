@@ -49,8 +49,8 @@
   },
   "origin": 9,
   "parent": {
-    "name": "joaninha_spr",
-    "path": "folders/Sprites/joaninha_spr.yy",
+    "name": "Ataque",
+    "path": "folders/Sprites/JoaninhaAnimacoes/Ataque.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
