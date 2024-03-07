@@ -45,7 +45,9 @@
   "resources": [
     {"id":{"name":"spoto_atkdown2","path":"sprites/spoto_atkdown2/spoto_atkdown2.yy",},},
     {"id":{"name":"sjoa_idleleft","path":"sprites/sjoa_idleleft/sjoa_idleleft.yy",},},
+    {"id":{"name":"obj_spawn2","path":"objects/obj_spawn2/obj_spawn2.yy",},},
     {"id":{"name":"shitboxatk_ud","path":"sprites/shitboxatk_ud/shitboxatk_ud.yy",},},
+    {"id":{"name":"obj_spawn3","path":"objects/obj_spawn3/obj_spawn3.yy",},},
     {"id":{"name":"sjoa_idledown","path":"sprites/sjoa_idledown/sjoa_idledown.yy",},},
     {"id":{"name":"spoto_idledown","path":"sprites/spoto_idledown/spoto_idledown.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
@@ -81,6 +83,7 @@
     {"id":{"name":"scr_funcoes","path":"scripts/scr_funcoes/scr_funcoes.yy",},},
     {"id":{"name":"sjoa_atkdown","path":"sprites/sjoa_atkdown/sjoa_atkdown.yy",},},
     {"id":{"name":"rinicio","path":"rooms/rinicio/rinicio.yy",},},
+    {"id":{"name":"obj_spawn1","path":"objects/obj_spawn1/obj_spawn1.yy",},},
     {"id":{"name":"obj_hitatk_rl","path":"objects/obj_hitatk_rl/obj_hitatk_rl.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"spoto_atkright2","path":"sprites/spoto_atkright2/spoto_atkright2.yy",},},
