@@ -1,1 +1,1 @@
-global.mortos = 0; 
+global.mortos=0 //controla o numero de mortos
