@@ -30,11 +30,12 @@ function fim_animacao(){
 function att_wave() {
 	randomize();
 	
-	switch global.wave {
-		default:
-			global.inimigos = 5;
-			global.inimigos_restantes = global.inimigos;
-		break;
+	if global.wave < 4 or global.wave >= 15 { //Waves de 1 a 3 e da 15 pra cima
+		global.inimigos = array_waves[global.wave - 1];
+		global.inimigos_restantes = global.inimigos;
+	} else { //Waves de 4 até 14
+		global.inimigos = array_waves[2] + (global.wave - 3) * 4
+		global.inimigos_restantes = global.inimigos;
 	}
 	
 	acao = decisao_spawn;
@@ -77,12 +78,4 @@ function inimigo_spawn() {
 	instance_create_layer(xx, yy, "inimigos", inimigo_obj);
 	
 	acao = decisao_spawn;
-}
-
-function debug_wave(w, i, t) {
-	///@param {real} Wave
-	///@param {real} Inimigos
-	///@param {real} Timer
-	
-	
 }
