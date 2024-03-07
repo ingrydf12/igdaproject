@@ -9,17 +9,17 @@ array_waves = [
 	5, //wave 1
 	7, //wave 2
 	9, //wave 3
-	2, //wave 4
-	2, //wave 5
-	1, //wave 6
-	1, //wave 7
-	1, //wave 8
-	1, //wave 9
-	1, //wave 10
-	1, //wave 11
-	1, //wave 12
-	1, //wave 13
-	1, //wave 14
+	13, //wave 4
+	17, //wave 5
+	21, //wave 6
+	25, //wave 7
+	29, //wave 8
+	33, //wave 9
+	37, //wave 10
+	41, //wave 11
+	45, //wave 12
+	49, //wave 13
+	53, //wave 14
 	100 //wave 15
 ]
 

@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "smashgame",
-    "path": "smashgame.yyp",
+    "name": "Spawn",
+    "path": "folders/Objects/System/Spawn.yy",
   },
   "parentObjectId": null,
   "persistent": false,
