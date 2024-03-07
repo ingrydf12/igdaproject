@@ -171,8 +171,9 @@ function inimigo_perseguir() {
 	
 	//EMPURRÃO
 	if hit == true {
+		spd = 0; //Resetar a speed após receber um golpe
 		path_end();
-		knockback_spd = lerp(knockback_spd, 0, .15);
+		knockback_spd = lerp(knockback_spd, 0, .15); //Força de knockback
 	
 		hspd = lengthdir_x(knockback_spd, knockback_dir);
 		vspd = lengthdir_y(knockback_spd, knockback_dir);
