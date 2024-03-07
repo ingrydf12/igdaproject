@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "System",
-    "path": "folders/Objects/System.yy",
+    "name": "Controles",
+    "path": "folders/Objects/System/Controles.yy",
   },
   "parentObjectId": null,
   "persistent": false,

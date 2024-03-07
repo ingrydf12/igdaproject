@@ -28,7 +28,7 @@
   "origin": 4,
   "parent": {
     "name": "Ataque",
-    "path": "folders/Sprites/PotoAnimacoes/Ataque.yy",
+    "path": "folders/Sprites/Personagens/PotoAnimacoes/Ataque.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

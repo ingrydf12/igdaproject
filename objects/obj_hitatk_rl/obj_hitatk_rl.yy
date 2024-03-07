@@ -34,5 +34,5 @@
     "path": "sprites/shitboxatk_rl/shitboxatk_rl.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

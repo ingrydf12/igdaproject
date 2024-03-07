@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Idle",
-    "path": "folders/Sprites/PotoAnimacoes/Idle.yy",
+    "path": "folders/Sprites/Personagens/PotoAnimacoes/Idle.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

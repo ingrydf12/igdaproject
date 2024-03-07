@@ -60,7 +60,7 @@
   "origin": 9,
   "parent": {
     "name": "JoaninhaAnimacoes",
-    "path": "folders/Sprites/JoaninhaAnimacoes.yy",
+    "path": "folders/Sprites/Personagens/JoaninhaAnimacoes.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

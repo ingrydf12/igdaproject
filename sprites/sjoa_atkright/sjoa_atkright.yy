@@ -50,7 +50,7 @@
   "origin": 9,
   "parent": {
     "name": "Ataque",
-    "path": "folders/Sprites/JoaninhaAnimacoes/Ataque.yy",
+    "path": "folders/Sprites/Personagens/JoaninhaAnimacoes/Ataque.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

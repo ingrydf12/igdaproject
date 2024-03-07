@@ -33,5 +33,5 @@
     "path": "sprites/shitboxatk_ud/shitboxatk_ud.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

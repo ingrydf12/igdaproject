@@ -49,7 +49,7 @@
   "origin": 9,
   "parent": {
     "name": "Idle",
-    "path": "folders/Sprites/JoaninhaAnimacoes/Idle.yy",
+    "path": "folders/Sprites/Personagens/JoaninhaAnimacoes/Idle.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

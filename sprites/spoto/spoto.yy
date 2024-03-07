@@ -49,7 +49,7 @@
   "origin": 4,
   "parent": {
     "name": "PotoAnimacoes",
-    "path": "folders/Sprites/PotoAnimacoes.yy",
+    "path": "folders/Sprites/Personagens/PotoAnimacoes.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

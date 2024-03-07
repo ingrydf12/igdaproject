@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spoto_idleup",
-  "bbox_bottom": 46,
-  "bbox_left": 27,
-  "bbox_right": 35,
-  "bbox_top": 33,
+  "bbox_bottom": 93,
+  "bbox_left": 55,
+  "bbox_right": 71,
+  "bbox_top": 64,
   "bboxMode": 2,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Idle",
-    "path": "folders/Sprites/PotoAnimacoes/Idle.yy",
+    "path": "folders/Sprites/Personagens/PotoAnimacoes/Idle.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
