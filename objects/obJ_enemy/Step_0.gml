@@ -4,6 +4,6 @@ if instance_exists(obj_player) {
 }
 
 if vida_atual <= 0 {
-	global.iatuais--;
+	global.inimigos_restantes--;
 	instance_destroy();
 }

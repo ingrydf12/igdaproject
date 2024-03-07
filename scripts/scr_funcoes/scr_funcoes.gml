@@ -25,3 +25,64 @@ function fim_animacao(){
 		if(argument_count > 2) _spd = argument[2];
 		return _image + _spd >= sprite_get_number(_sprite);
 }
+
+//WAVES INIMIGOS
+function att_wave() {
+	randomize();
+	
+	switch global.wave {
+		default:
+			global.inimigos = 5;
+			global.inimigos_restantes = global.inimigos;
+		break;
+	}
+	
+	acao = decisao_spawn;
+}
+
+function decisao_spawn() {
+	if spawn == true and global.inimigos > 0 {
+		acao = inimigo_spawn;
+	}
+	
+	if global.inimigos_restantes <= 0 {
+		global.wave++;
+		spawn = false;
+		timer = 120;
+		acao = att_wave;
+	}
+}
+
+function inimigo_spawn() {
+	randomize();
+	
+	var a = [obj_spawn1, obj_spawn2, obj_spawn3];
+	var i = irandom_range(0, array_length(a) - 1);
+	
+	//definir um x e y de spawn do inimigo
+	var xx = a[i].x; //ponto x de spawn
+	var yy = a[i].y; //ponto y de spawn
+	
+	var p = instance_nearest(xx, yy, obj_player); //jogador mais próximo
+	
+	//evitar spawnar muito próximo a um player
+	if point_distance(xx, yy, p.x, p.y) <= 220 {
+		exit;
+	}
+	
+	spawn = false;
+	timer = irandom_range(180, 300);
+	global.inimigos--;
+	
+	instance_create_layer(xx, yy, "inimigos", inimigo_obj);
+	
+	acao = decisao_spawn;
+}
+
+function debug_wave(w, i, t) {
+	///@param {real} Wave
+	///@param {real} Inimigos
+	///@param {real} Timer
+	
+	
+}

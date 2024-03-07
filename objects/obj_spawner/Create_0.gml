@@ -1,10 +1,12 @@
 /// @description Insert description here
 randomize();
 
-//wave = -1;
+global.wave = 0;
 timer = -1; //tempo
 spawn = true; //variável para controlar se o inimigo vai spawnar ou não
 
-imaximo = 10; //inimigos máximos na wave
-ispawn = 0; //inimigos já spawnados
-global.iatuais = imaximo; //inimigos presentes na wave
+inimigo_obj = obj_enemy; //inimigo a ser spawnado
+global.inimigos = 10; //inimigos máximos na wave
+global.inimigos_restantes = 0; //inimigos restantes
+
+acao = decisao_spawn; //acao a ser executada
