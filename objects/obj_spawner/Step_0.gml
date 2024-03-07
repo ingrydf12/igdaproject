@@ -18,7 +18,7 @@ if spawn and ispawn < imaximo {
 	}
 	
 	spawn = !spawn;
-	timer = irandom_range(90, 170);
+	timer = irandom_range(180, 300);
 	ispawn++;
 	
 	instance_create_layer(xx, yy, "inimigos", obj_enemy);

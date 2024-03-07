@@ -1,2 +1,2 @@
 /// @description Cooldown ataque
-ataque = !ataque; //se 'ataque' for true ele transforma em false e vice-versa
+//Após esse alarme chegar em 0 o jogador poderá atacar novamente

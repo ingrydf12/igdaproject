@@ -1,6 +1,6 @@
 if instance_exists(obj_player) {
-	var tam = obj_mapa.tam_cell;
-	var _d = point_distance(x, y, dest_x, dest_y);
+	//var tam = obj_mapa.tam_cell;
+	//var _d = point_distance(x, y, dest_x, dest_y);
 	var _p = instance_nearest(x, y, obj_player);
 	
 	if global.debug {

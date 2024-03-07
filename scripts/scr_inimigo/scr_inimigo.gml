@@ -108,8 +108,8 @@ function inimigo_andar(){
 	if point_distance(x, y, dest_x, dest_y) > 2 {
 		spd_inimigo();
 		
-		var _p = instance_nearest(x, y, obj_player);
-		var tam = obj_mapa.tam_cell; //Tamanho da célula
+		//var _p = instance_nearest(x, y, obj_player);
+		//var tam = obj_mapa.tam_cell; //Tamanho da célula
 	
 		var x1 = x; //X inicial
 		var y1 = y; //Y inicial
@@ -141,6 +141,7 @@ function inimigo_parado() {
 	image_speed = .8;
 }
 
+#region PERSEGUIÇÃO
 function inimigo_perseguir() {
 	dist_perigo = dist_perigo_perseg; //Aumentar o campo de visão para procurar o player
 	dist_segura = dist_perigo + 40;
@@ -205,8 +206,8 @@ function pos_inimigo_perseg() {
 		
 		spd_inimigo(); //Verificar movimentação
 		
-		var _p = instance_nearest(x, y, obj_player);
-		var tam = obj_mapa.tam_cell; //Tamanho da célula
+		//var _p = instance_nearest(x, y, obj_player);
+		//var tam = obj_mapa.tam_cell; //Tamanho da célula
 	
 		var x1 = x; //X inicial
 		var y1 = y; //Y inicial
@@ -230,4 +231,6 @@ function pos_inimigo_perseg() {
 		alarm[0] = irandom_range(80, 300);
 	}
 }
+#endregion PERSEGUIÇÃO
+
 #endregion ESTADOS INIMIGO

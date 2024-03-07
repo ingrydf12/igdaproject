@@ -1,7 +1,7 @@
 /// @description Insert description here
 randomize();
 
-wave = -1;
+//wave = -1;
 timer = -1; //tempo
 spawn = true; //variável para controlar se o inimigo vai spawnar ou não
 

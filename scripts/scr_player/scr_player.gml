@@ -254,6 +254,14 @@ function atacar() {
 	if fim_animacao() {
 		//Mudar para o estado de andar
 		estado = andar;
+		switch tecla_atk {
+			case "X": //Player 1
+				alarm[1] = 50;
+			break;
+			case "L": //Player 2
+				alarm[1] = 30;
+			break;
+		}
 		
 		//Retornar ao sprite de idle
 		att_sprite_player("Idle");
