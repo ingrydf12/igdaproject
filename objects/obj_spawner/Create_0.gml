@@ -5,6 +5,7 @@ global.wave = 1;
 timer = -1; //tempo
 spawn = true; //variável para controlar se o inimigo vai spawnar ou não
 
+/*
 array_waves = [
 	5, //wave 1
 	7, //wave 2
@@ -22,9 +23,12 @@ array_waves = [
 	53, //wave 14
 	100 //wave 15
 ]
+*/
 
 inimigo_obj = obj_enemy; //inimigo a ser spawnado
-global.inimigos = array_waves[0]; //inimigos máximos na wave
+global.inimigos = 5; //inimigos máximos na wave
 global.inimigos_restantes = global.inimigos; //inimigos restantes
+
+att_wave();
 
 acao = decisao_spawn; //acao a ser executada

@@ -30,11 +30,24 @@ function fim_animacao(){
 function att_wave() {
 	randomize();
 	
-	if global.wave < 4 or global.wave >= 15 { //Waves de 1 a 3 e da 15 pra cima
-		global.inimigos = array_waves[global.wave - 1];
-		global.inimigos_restantes = global.inimigos;
-	} else { //Waves de 4 até 14
-		global.inimigos = array_waves[2] + (global.wave - 3) * 4
+	//if global.wave < 4 or global.wave >= 15 { //Waves de 1 a 3 e da 15 pra cima
+	//	global.inimigos = array_waves[global.wave - 1];
+	//	global.inimigos_restantes = global.inimigos;
+	//} else { //Waves de 4 até 14
+	//	global.inimigos = array_waves[2] + (global.wave - 3) * 4
+	//	global.inimigos_restantes = global.inimigos;
+	//}
+	
+	if global.wave < 15 {
+		if global.wave < 4 {
+			global.inimigos = 5 + (global.wave - 1) * 2;
+			global.inimigos_restantes = global.inimigos;	
+		} else {
+			global.inimigos = 9 + ((global.wave - 3) * 4);
+			global.inimigos_restantes = global.inimigos;	
+		}
+	} else {
+		global.inimigos = 12 + ((global.wave - 3) * 4);
 		global.inimigos_restantes = global.inimigos;
 	}
 	
