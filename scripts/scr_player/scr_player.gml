@@ -255,12 +255,13 @@ function atacar() {
 	if fim_animacao() {
 		//Mudar para o estado de andar
 		estado = andar;
+		//Tempo para atacar novamente (em frames)
 		switch tecla_atk {
 			case "X": //Player 1
 				alarm[1] = 50;
 			break;
 			case "L": //Player 2
-				alarm[1] = 30;
+				alarm[1] = 15;
 			break;
 		}
 		

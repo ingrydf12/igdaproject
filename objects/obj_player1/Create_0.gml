@@ -1,6 +1,6 @@
 /// @description Insert description here
 event_inherited();
 
-wspd = 6; //walk speed
-knockback_spd = 25;
+wspd = 5.5; //walk speed
+knockback_spd = 35;
 tecla_atk = "X";
