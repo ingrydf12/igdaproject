@@ -1,16 +1,16 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_modo",
+  "name": "obj_mode_arena",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "HUD",
-    "path": "folders/Objects/System/HUD.yy",
+    "name": "Menu",
+    "path": "folders/Objects/System/Menu.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sbutton_modo",
-    "path": "sprites/sbutton_modo/sbutton_modo.yy",
+    "name": "sbutton_arena",
+    "path": "sprites/sbutton_arena/sbutton_arena.yy",
   },
   "spriteMaskId": null,
   "visible": true,
