@@ -1,5 +1,5 @@
 /// @description Insert description here
-escala = 3;
+escala = 2;
 
 image_xscale = escala;
 image_yscale = escala;
