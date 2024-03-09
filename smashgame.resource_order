@@ -26,6 +26,7 @@
     {"name":"Timelines","order":6,"path":"folders/Timelines.yy",},
     {"name":"Menu","order":11,"path":"folders/Sprites/Menu.yy",},
     {"name":"Menu","order":9,"path":"folders/Objects/System/Menu.yy",},
+    {"name":"Controles","order":12,"path":"folders/Sprites/Controles.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spoto_atkdown2","order":1,"path":"sprites/spoto_atkdown2/spoto_atkdown2.yy",},
@@ -68,6 +69,7 @@
     {"name":"obj_mode_horda","order":1,"path":"objects/obj_mode_horda/obj_mode_horda.yy",},
     {"name":"obj_spawn1","order":1,"path":"objects/obj_spawn1/obj_spawn1.yy",},
     {"name":"obj_hitatk_rl","order":5,"path":"objects/obj_hitatk_rl/obj_hitatk_rl.yy",},
+    {"name":"obj_controles","order":3,"path":"objects/obj_controles/obj_controles.yy",},
     {"name":"spoto_atkright2","order":3,"path":"sprites/spoto_atkright2/spoto_atkright2.yy",},
     {"name":"sbutton_modo","order":1,"path":"sprites/sbutton_modo/sbutton_modo.yy",},
     {"name":"obj_player3","order":4,"path":"objects/obj_player3/obj_player3.yy",},
@@ -81,5 +83,6 @@
     {"name":"sjoa","order":2,"path":"sprites/sjoa/sjoa.yy",},
     {"name":"sbutton_arena","order":2,"path":"sprites/sbutton_arena/sbutton_arena.yy",},
     {"name":"stextmodo","order":4,"path":"sprites/stextmodo/stextmodo.yy",},
+    {"name":"rarena","order":3,"path":"rooms/rarena/rarena.yy",},
   ],
 }
