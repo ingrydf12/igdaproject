@@ -211,7 +211,6 @@ function andar() {
 	
 	//EMPURRÃO
 	if hit == true and imune == false {
-		spd = 0; //Resetar a speed após receber um golpe
 		p_knockback_spd = lerp(p_knockback_spd, 0, .15); //Força de knockback
 	
 		hspd = lengthdir_x(p_knockback_spd, p_knockback_dir);

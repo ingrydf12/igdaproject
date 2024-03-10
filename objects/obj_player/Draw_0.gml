@@ -1,7 +1,13 @@
 if hit == true {
-	gpu_set_fog(true, c_red, 0, 0);
-	draw_self();
-	gpu_set_fog(false, c_red, 0, 0);
+	if imune == false {
+		gpu_set_fog(true, c_red, 0, 0);
+		draw_self();
+		gpu_set_fog(false, c_red, 0, 0);
+	} else {
+		image_alpha = .4;
+		draw_self();
+		image_alpha = 1;
+	}
 } else {
 	draw_self(); // Desenhar o próprio jogador
 }

@@ -5,16 +5,19 @@ if global.pause == true {
 
 script_execute(estado);
 
+//SISTEMA DE IMUNIDADE
 if imune == true {
-	if alarm[0] <= 0 {
-		alarm[0] = 14;
-	}
-	
+	//diminuir o timer de imunidade e quando chegar em 0 deixar
 	imune_time--;
 	if imune_time <= 0 {
 		imune = false;
 		hit = true;
-		alarm[0] = 2;
+		alarm[0] = 1;
+	}
+	
+	//ficar alternando a variável 'hit'
+	if alarm[0] <= 0 {
+		alarm[0] = 18;
 	}
 	
 }
