@@ -33,8 +33,8 @@ colision_line = -1;
 
 //STATUS
 hit = false;
-vida_maxima = 100;
-vida_atual = vida_maxima; //vida inicial
+hp_maxima = 100;
+hp_atual = hp_maxima; //vida inicial
 
 //empurrão DO player
 knockback_dir = -1; //direção do knockback
