@@ -210,13 +210,14 @@ function andar() {
 	//Aqui termina o código de direção do jogador
 	
 	//EMPURRÃO
-	if hit == true {
+	if hit == true and imune == false {
 		spd = 0; //Resetar a speed após receber um golpe
-		path_end();
 		p_knockback_spd = lerp(p_knockback_spd, 0, .15); //Força de knockback
 	
 		hspd = lengthdir_x(p_knockback_spd, p_knockback_dir);
 		vspd = lengthdir_y(p_knockback_spd, p_knockback_dir);
+		
+		colisao();
 	}
 	////////////////////
 	

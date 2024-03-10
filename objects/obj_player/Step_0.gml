@@ -5,6 +5,20 @@ if global.pause == true {
 
 script_execute(estado);
 
+if imune == true {
+	if alarm[0] <= 0 {
+		alarm[0] = 14;
+	}
+	
+	imune_time--;
+	if imune_time <= 0 {
+		imune = false;
+		hit = true;
+		alarm[0] = 2;
+	}
+	
+}
+
 if hp_atual <= 0 { // Se a vida do jogador for menor ou igual a zero, o jogador morreu
 	instance_destroy(); // Destruir o objeto do jogador ou executar alguma outra ação de morte
 	instance_create_layer(x, y, "HUD", obj_hud_restart); // Ativa o objeto obj_HUD

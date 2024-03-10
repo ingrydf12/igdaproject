@@ -37,8 +37,9 @@ vida_maxima = 100;
 vida_atual = vida_maxima; //vida inicial
 
 //empurrão DO player
-knockback_dir = -1;
-knockback_spd = -1;
+knockback_dir = -1; //direção do knockback
+knockback_spd = -1; //força do knockback
+knockback_resistence = 4; //resistência ao knockback
 
 //empurrão AO player
-p_knockback_spd = 30;
+p_knockback_spd = 24; //força do knockback
