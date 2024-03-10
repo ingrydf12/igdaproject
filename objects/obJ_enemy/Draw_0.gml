@@ -38,5 +38,6 @@ if global.debug {
 	draw_text(x, y + 20, est); //estado
 }
 draw_text(x, y - 20, "HP: " + string(vida_atual)); //vida
+draw_rectangle(x-8, y-8, x+8, y+8, false);
 draw_set_halign(-1);
 draw_set_valign(-1);

@@ -120,7 +120,7 @@ function inimigo_andar(){
 		hspd = lengthdir_x(spd, dir);
 		vspd = lengthdir_y(spd, dir);
 	
-		//colisao_inimigo();
+		
 	
 		//Caminho a ser seguido pelo inimigo
 		if mp_grid_path(obj_mapa.grid_mapa,caminho,x1,y1,dest_x,dest_y,true) {
