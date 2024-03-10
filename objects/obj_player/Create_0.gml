@@ -20,6 +20,10 @@ spd = wspd; //velocidade de mov
 estado = andar; //estado de ação do player (andar, colidir, atacar...)
 
 knockback_spd = 20;
+p_knockback_dir = -1;
+p_knockback_spd = -1;
+
+imune = false;
 hit = false; //verificar se foi acertado pelo inimigo
 hp_max = 100; // Define a vida máxima do jogador
 hp_atual = hp_max; // Define a vida atual do jogador como a vida máxima inicialmente

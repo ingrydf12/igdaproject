@@ -36,6 +36,9 @@ hit = false;
 vida_maxima = 100;
 vida_atual = vida_maxima; //vida inicial
 
-//empurrão
+//empurrão DO player
 knockback_dir = -1;
 knockback_spd = -1;
+
+//empurrão AO player
+p_knockback_spd = 30;
