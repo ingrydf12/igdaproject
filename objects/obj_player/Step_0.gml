@@ -1,4 +1,8 @@
 /// @description Insert description here
+if global.pause == true {
+	exit;
+}
+
 script_execute(estado);
 
 if hp_atual <= 0 { // Se a vida do jogador for menor ou igual a zero, o jogador morreu

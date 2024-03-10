@@ -1,5 +1,5 @@
 /// @description Insert description here
-if !instance_exists(obj_player) {
+if !instance_exists(obj_player) or global.pause == true {
 	exit;
 }
 
