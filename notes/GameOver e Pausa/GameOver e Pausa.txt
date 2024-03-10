@@ -1,0 +1,11 @@
+Sistema de Pausa
+-
+-
+
+
+Tela de sequência
+- Aparece após detectar que todos os jogadores estão mortos
+- Animação básica de um retângulo saindo da parte de cima e aparecendo o botão de reinicio
+
+- Botão de reinicio tem sprites para ao detectar o mouse, mudar o sprite
+- Volta a tela inicial
