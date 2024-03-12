@@ -105,6 +105,21 @@ function att_sprite_player(a) {
 							sprite_index = spoto_atkdown;
 						break;
 					}
+				case "P": //Player 3
+					switch dir_atk {
+						//case 0: //Direita
+						//	sprite_index = 
+						//break;
+						//case 2: //Esquerda
+						//	sprite_index = 
+						//break;
+						//case 1: //Cima
+						//	sprite_index = 
+						//break;
+						//case 3: //Baixo
+						//	sprite_index = 
+						break;
+					}
 				break
 			}
 		break;
