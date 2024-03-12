@@ -107,8 +107,8 @@ function att_sprite_player(a) {
 					}
 				case "P": //Player 3
 					switch dir_atk {
-						//case 0: //Direita
-						//	sprite_index = 
+						case 0: //Direita
+							sprite_index = splayer3
 						//break;
 						//case 2: //Esquerda
 						//	sprite_index = 
