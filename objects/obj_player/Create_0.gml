@@ -36,3 +36,8 @@ dir_atk = -1;
 ataque = false;
 tecla_atk = "";
 #endregion STATUS PLAYER ///////////////////////////
+
+#region Selection
+global.player = 0;
+
+#endregion Selection
