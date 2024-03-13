@@ -52,6 +52,7 @@
     {"name":"obj_mapa","order":1,"path":"objects/obj_mapa/obj_mapa.yy",},
     {"name":"sreinicio","order":1,"path":"sprites/sreinicio/sreinicio.yy",},
     {"name":"GameOver e Pausa","order":3,"path":"notes/GameOver e Pausa/GameOver e Pausa.yy",},
+    {"name":"obj_selector","order":4,"path":"objects/obj_selector/obj_selector.yy",},
     {"name":"obj_hitatk_ud","order":6,"path":"objects/obj_hitatk_ud/obj_hitatk_ud.yy",},
     {"name":"sbutton_horda","order":3,"path":"sprites/sbutton_horda/sbutton_horda.yy",},
     {"name":"shitboxatk_rl","order":2,"path":"sprites/shitboxatk_rl/shitboxatk_rl.yy",},

@@ -77,6 +77,7 @@
     {"id":{"name":"obj_mapa","path":"objects/obj_mapa/obj_mapa.yy",},},
     {"id":{"name":"sreinicio","path":"sprites/sreinicio/sreinicio.yy",},},
     {"id":{"name":"GameOver e Pausa","path":"notes/GameOver e Pausa/GameOver e Pausa.yy",},},
+    {"id":{"name":"obj_selector","path":"objects/obj_selector/obj_selector.yy",},},
     {"id":{"name":"Inimigo","path":"notes/Inimigo/Inimigo.yy",},},
     {"id":{"name":"obj_hitatk_ud","path":"objects/obj_hitatk_ud/obj_hitatk_ud.yy",},},
     {"id":{"name":"sbutton_horda","path":"sprites/sbutton_horda/sbutton_horda.yy",},},
