@@ -3,6 +3,8 @@ if global.pause == true {
 	exit;
 }
 
+dano = irandom_range(dano_min, dano_max);
+
 script_execute(estado);
 
 //SISTEMA DE IMUNIDADE

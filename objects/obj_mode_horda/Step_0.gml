@@ -7,6 +7,8 @@ if point_in_rectangle(mouse_x, mouse_y, obj_x - sw / 2, obj_y - sh / 2, obj_x + 
 	image_index = 1;
 	
 	if mouse_check_button_pressed(mb_left) {
+		global.modo_jogo = "HORDA";
+		//instance_create_layer(x,y,layer,obj_control_globais);
 		room_goto(rinicio);
 	}
 	

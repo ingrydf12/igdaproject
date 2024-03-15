@@ -72,9 +72,9 @@ function att_sprite_player(a) {
 	///@param {string} "string" Ação a ser executada: Ataque; Andar; Idle
 	switch a {
 		#region ATACAR
-		case "Ataque":
-			switch tecla_atk { //Verificar qual player vai atacar baseado na tecla de ataque
-				case "X":
+		case "ATAQUE":
+			switch id_player { //Verificar qual player vai atacar baseado na tecla de ataque
+				case 0: //Player 1 Ataque
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = sjoa_atkright;
@@ -90,7 +90,7 @@ function att_sprite_player(a) {
 						break;
 					}
 				break;
-				case "L": //Player 2
+				case 1: //Player 2 Ataque
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = spoto_atkright;
@@ -104,30 +104,15 @@ function att_sprite_player(a) {
 						case 3: //Baixo
 							sprite_index = spoto_atkdown;
 						break;
-					}
-				case "P": //Player 3
-					switch dir_atk {
-						case 0: //Direita
-							sprite_index = splayer3
-						//break;
-						//case 2: //Esquerda
-						//	sprite_index = 
-						//break;
-						//case 1: //Cima
-						//	sprite_index = 
-						//break;
-						//case 3: //Baixo
-						//	sprite_index = 
-						break;
-					}
-				break
+					};
+				break;
 			}
 		break;
 		#endregion ATACAR
 		#region ANDAR
-		case "Andar":
-			switch tecla_atk {
-				case "X": //Player 1 Andar
+		case "ANDAR":
+			switch id_player {
+				case 0: //Player 1 Andar
 					//Verificar se está andando para alguma direção e dizer seu quadrante
 					if direita {
 						sprite_index = sjoa_idleright;
@@ -143,7 +128,7 @@ function att_sprite_player(a) {
 						dir_atk = 3;
 					}
 				break;
-				case "L": //Player 2 Andar
+				case 1: //Player 2 Andar
 					//Verificar se está andando para alguma direção e dizer seu quadrante
 					if direita {
 						sprite_index = spoto_idleright;
@@ -160,13 +145,12 @@ function att_sprite_player(a) {
 					}
 				break;
 			}
-			
 		break;
 		#endregion ANDAR
 		#region IDLE
-		case "Idle":
-			switch tecla_atk { //Verificar qual player está atacando baseado na tecla de ataque
-				case "X":
+		case "IDLE":
+			switch id_player { //Verificar qual player está atacando baseado na tecla de ataque
+				case 0: //Player 1 Idle
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = sjoa_idleright;
@@ -182,7 +166,7 @@ function att_sprite_player(a) {
 						break;
 					}
 				break;
-				case "L": //Player 2
+				case 1: //Player 2 Idle
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = spoto_idleright;
@@ -197,7 +181,7 @@ function att_sprite_player(a) {
 							sprite_index = spoto_idledown;
 						break;
 					}
-				break
+				break;
 			}
 		break;
 		#endregion IDLE
@@ -208,7 +192,7 @@ function att_sprite_player(a) {
 function andar() {
 	
 	//Mudar sprite para andar
-	att_sprite_player("Andar");
+	att_sprite_player("ANDAR");
 	
 	//Direção do eixo (positivo ou negativo)
 	hspd = direita - esquerda;
@@ -243,7 +227,7 @@ function andar() {
 		image_index = 0; //Resetar frame da animação
 		
 		//Mudar a sprite, para ataque, de acordo com a direção que o player está olhando
-		att_sprite_player("Ataque");
+		att_sprite_player("ATAQUE");
 		
 		//Mudar para o estado de atacar
 		estado = atacar;
@@ -292,7 +276,7 @@ function atacar() {
 		}
 		
 		//Retornar ao sprite de idle
-		att_sprite_player("Idle");
+		att_sprite_player("IDLE");
 		
 		ataque = false;
 	}

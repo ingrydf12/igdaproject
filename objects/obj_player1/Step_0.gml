@@ -4,6 +4,4 @@ baixo = keyboard_check(ord("S"));
 esquerda = keyboard_check(ord("A"));
 direita = keyboard_check(ord("D"));
 
-dano = irandom_range(18, 27);
-
 event_inherited();

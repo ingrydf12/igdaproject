@@ -25,16 +25,17 @@ if global.debug and keyboard_check(vk_lcontrol) {
 	}
 	if keyboard_check_pressed(vk_subtract) {
 		var _p = show_question("Qual player? (1 = Yes/2 = No)");
+		var p = -1;
 		switch _p {
 			default:
 				show_message("Esse player não existe!");
 			break;
 			case 1:
-				var p = instance_find(obj_player1, 1);
+				p = instance_find(obj_player1, 1);
 				if p {instance_destroy(p)}
 			break;
 			case 0:
-				var p = instance_find(obj_player2, 1);
+				p = instance_find(obj_player2, 1);
 				if p {instance_destroy(p)}
 			break;
 		}
