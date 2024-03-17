@@ -7,7 +7,7 @@ function att_sprite_player(acao) {
 		#region ATACAR
 		case "ATAQUE":
 			switch id_player { //Verificar qual player vai atacar baseado na tecla de ataque
-				case 0: //Player 1 Ataque
+				case 1: //Player 1 Ataque
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = sjoa_atkright;
@@ -23,7 +23,7 @@ function att_sprite_player(acao) {
 						break;
 					}
 				break;
-				case 1: //Player 2 Ataque
+				case 2: //Player 2 Ataque
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = spoto_atkright;
@@ -39,13 +39,29 @@ function att_sprite_player(acao) {
 						break;
 					};
 				break;
+				case 3: //Player 3 Ataque
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = splayer3;
+						break;
+						case 2: //Esquerda
+							sprite_index = splayer3;
+						break;
+						case 1: //Cima
+							sprite_index = splayer3;
+						break;
+						case 3: //Baixo
+							sprite_index = splayer3;
+						break;
+					};
+				break;
 			}
 		break;
 		#endregion ATACAR
 		#region ANDAR
 		case "ANDAR":
 			switch id_player {
-				case 0: //Player 1 Andar
+				case 1: //Player 1 Andar
 					//Verificar se está andando para alguma direção e dizer seu quadrante
 					if direita {
 						sprite_index = sjoa_idleright;
@@ -61,7 +77,7 @@ function att_sprite_player(acao) {
 						dir_atk = 3;
 					}
 				break;
-				case 1: //Player 2 Andar
+				case 2: //Player 2 Andar
 					//Verificar se está andando para alguma direção e dizer seu quadrante
 					if direita {
 						sprite_index = spoto_idleright;
@@ -77,13 +93,29 @@ function att_sprite_player(acao) {
 						dir_atk = 3;
 					}
 				break;
+				case 3: //Player 3 Andar
+					//Verificar se está andando para alguma direção e dizer seu quadrante
+					if direita {
+						sprite_index = splayer3;
+						dir_atk = 0;
+					} else if cima {
+						sprite_index = splayer3;
+						dir_atk = 1;
+					} else if esquerda {
+						sprite_index = splayer3;
+						dir_atk = 2;
+					} else if baixo {
+						sprite_index = splayer3;
+						dir_atk = 3;
+					}
+				break;
 			}
 		break;
 		#endregion ANDAR
 		#region IDLE
 		case "IDLE":
 			switch id_player { //Verificar qual player está atacando baseado na tecla de ataque
-				case 0: //Player 1 Idle
+				case 1: //Player 1 Idle
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = sjoa_idleright;
@@ -99,7 +131,7 @@ function att_sprite_player(acao) {
 						break;
 					}
 				break;
-				case 1: //Player 2 Idle
+				case 2: //Player 2 Idle
 					switch dir_atk {
 						case 0: //Direita
 							sprite_index = spoto_idleright;
@@ -112,6 +144,22 @@ function att_sprite_player(acao) {
 						break;
 						case 3: //Baixo
 							sprite_index = spoto_idledown;
+						break;
+					}
+				break;
+				case 3: //Player 3 Idle
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = splayer3;
+						break;
+						case 2: //Esquerda
+							sprite_index = splayer3;
+						break;
+						case 1: //Cima
+							sprite_index = splayer3;
+						break;
+						case 3: //Baixo
+							sprite_index = splayer3;
 						break;
 					}
 				break;

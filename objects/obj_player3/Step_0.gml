@@ -1,10 +1,9 @@
 //Definir as teclas das 4 direções
-cima = keyboard_check(ord("I"));
-baixo = keyboard_check(ord("K"));
-esquerda = keyboard_check(ord("J"));
-direita = keyboard_check(ord("L"));
+cima = keyboard_check(ord("Y"));
+baixo = keyboard_check(ord("H"));
+esquerda = keyboard_check(ord("G"));
+direita = keyboard_check(ord("J"));
 
-tecla_atk = keyboard_check(ord("P"));
 // Inherit the parent event
 event_inherited();
 

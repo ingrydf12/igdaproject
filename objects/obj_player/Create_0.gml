@@ -38,17 +38,17 @@ global.player = 0;
 #endregion Selection
 
 #region DADOS POR GRID
-//id_player = global.player1 - 1; //Id do player menos 1
+var id_p = id_player - 1; //Id do player menos 1
 var grid = global.grid_players; //Variável local da grid global
 
-hp_max = grid[# Player.Vida, id_player]; //Vida máxima
+hp_max = grid[# Player.Vida, id_p]; //Vida máxima
 hp_atual = hp_max; //Vida
-wspd = grid[# Player.Speed, id_player]; //Walk Speed
+wspd = grid[# Player.Speed, id_p]; //Walk Speed
 spd = wspd; //Speed
-dano_min = grid[# Player.DanoMin, id_player]; //Dano Mínimo
-dano_max = grid[# Player.DanoMax, id_player]; //Dano Máximo
+dano_min = grid[# Player.DanoMin, id_p]; //Dano Mínimo
+dano_max = grid[# Player.DanoMax, id_p]; //Dano Máximo
 dano = irandom_range(dano_min, dano_max);
-knockback_spd = grid[# Player.KB, id_player]; //Força de Knockback
-knockback_resistence = grid[# Player.RKB, id_player]; //Resistência a Knockback
-sprite_index = grid[# Player.Sprite, id_player];
+knockback_spd = grid[# Player.KB, id_p]; //Força de Knockback
+knockback_resistence = grid[# Player.RKB, id_p]; //Resistência a Knockback
+sprite_index = grid[# Player.Sprite, id_p];
 #endregion DADOS POR GRID

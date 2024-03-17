@@ -105,7 +105,7 @@ function andar() {
 	
 	//Verificar tecla de ataque (tecla 'X' ou 'L')
 	if keyboard_check_pressed(ord(tecla_atk)) and alarm[1] <= 0 {
-		spd = wspd/2; //Resetar a speed do player após bater
+		spd = 0; //Resetar a speed do player após bater
 		image_index = 0; //Resetar frame da animação
 		
 		//Mudar a sprite, para ataque, de acordo com a direção que o player está olhando
@@ -138,7 +138,7 @@ function atacar() {
 				break;
 			}
 			
-			if image_index == 2 {
+			if image_index >= 2 {
 				ataque = true;
 			}
 		}
@@ -154,6 +154,9 @@ function atacar() {
 			break;
 			case "L": //Player 2
 				alarm[1] = 15;
+			break;
+			case "V": //Player 3
+				alarm[1] = 60;
 			break;
 		}
 		

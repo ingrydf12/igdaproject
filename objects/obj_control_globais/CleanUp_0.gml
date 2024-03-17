@@ -1,2 +1,4 @@
 /// @description Insert description here
-ds_grid_destroy(global.grid_players);
+if global.modo_jogo == "ARENA" or global.modo_jogo == "HORDA" {
+	ds_grid_destroy(global.grid_players);
+}

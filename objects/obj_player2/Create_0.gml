@@ -1,5 +1,5 @@
 /// @description Insert description here
-id_player = global.player2 - 1; //Id do player menos 1
+id_player = global.player2; //Id do player menos 1
 event_inherited();
 tecla_atk = "L";
 
