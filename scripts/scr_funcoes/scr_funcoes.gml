@@ -1,6 +1,128 @@
 // Script assets have changed for v2.3.0 see
+#region ANIMAÇÕES
+//MUDAS SPRITES DO PLAYER DE ACORDO COM A AÇÃO DELE
+function att_sprite_player(acao) {
+	///@param {string} "ação" Ação a ser executada: Ataque; Andar; Idle
+	switch acao {
+		#region ATACAR
+		case "ATAQUE":
+			switch id_player { //Verificar qual player vai atacar baseado na tecla de ataque
+				case 0: //Player 1 Ataque
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = sjoa_atkright;
+						break;
+						case 2: //Esquerda
+							sprite_index = sjoa_atkleft;
+						break;
+						case 1: //Cima
+							sprite_index = sjoa_atkup;
+						break;
+						case 3: //Baixo
+							sprite_index = sjoa_atkdown;
+						break;
+					}
+				break;
+				case 1: //Player 2 Ataque
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = spoto_atkright;
+						break;
+						case 2: //Esquerda
+							sprite_index = spoto_atkleft;
+						break;
+						case 1: //Cima
+							sprite_index = spoto_atkup;
+						break;
+						case 3: //Baixo
+							sprite_index = spoto_atkdown;
+						break;
+					};
+				break;
+			}
+		break;
+		#endregion ATACAR
+		#region ANDAR
+		case "ANDAR":
+			switch id_player {
+				case 0: //Player 1 Andar
+					//Verificar se está andando para alguma direção e dizer seu quadrante
+					if direita {
+						sprite_index = sjoa_idleright;
+						dir_atk = 0;
+					} else if cima {
+						sprite_index = sjoa_idleup;
+						dir_atk = 1;
+					} else if esquerda {
+						sprite_index = sjoa_idleleft;
+						dir_atk = 2;
+					} else if baixo {
+						sprite_index = sjoa_idledown;
+						dir_atk = 3;
+					}
+				break;
+				case 1: //Player 2 Andar
+					//Verificar se está andando para alguma direção e dizer seu quadrante
+					if direita {
+						sprite_index = spoto_idleright;
+						dir_atk = 0;
+					} else if cima {
+						sprite_index = spoto_idleup;
+						dir_atk = 1;
+					} else if esquerda {
+						sprite_index = spoto_idleleft;
+						dir_atk = 2;
+					} else if baixo {
+						sprite_index = spoto_idledown;
+						dir_atk = 3;
+					}
+				break;
+			}
+		break;
+		#endregion ANDAR
+		#region IDLE
+		case "IDLE":
+			switch id_player { //Verificar qual player está atacando baseado na tecla de ataque
+				case 0: //Player 1 Idle
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = sjoa_idleright;
+						break;
+						case 2: //Esquerda
+							sprite_index = sjoa_idleleft;
+						break;
+						case 1: //Cima
+							sprite_index = sjoa_idleup;
+						break;
+						case 3: //Baixo
+							sprite_index = sjoa_idledown;
+						break;
+					}
+				break;
+				case 1: //Player 2 Idle
+					switch dir_atk {
+						case 0: //Direita
+							sprite_index = spoto_idleright;
+						break;
+						case 2: //Esquerda
+							sprite_index = spoto_idleleft;
+						break;
+						case 1: //Cima
+							sprite_index = spoto_idleup;
+						break;
+						case 3: //Baixo
+							sprite_index = spoto_idledown;
+						break;
+					}
+				break;
+			}
+		break;
+		#endregion IDLE
+	}
+}
+
 //Verificar fim de uma animação
-function fim_animacao(){
+function fim_animacao() {
 	/// @description animation_end(sprite_index,image_index, rate)
 	/// @param {real} <sprite_index> The index of the sprite being animated
 	/// @param {real} <image_index> The current framde value
@@ -25,6 +147,7 @@ function fim_animacao(){
 		if(argument_count > 2) _spd = argument[2];
 		return _image + _spd >= sprite_get_number(_sprite);
 }
+#endregion ANIMAÇÕES
 
 #region WAVES
 //WAVES INIMIGOS
@@ -93,3 +216,4 @@ function inimigo_spawn() {
 	
 	acao = decisao_spawn;
 }
+#endregion WAVES

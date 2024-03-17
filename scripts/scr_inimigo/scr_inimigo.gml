@@ -44,13 +44,16 @@ function spd_inimigo() {
 				var _vulto = instance_create_layer(x, y, layer, obj_rastro);
 				_vulto.image_alpha = .09;
 				_vulto.sprite_index = sprite_index;
-				if spd < wspd/4 {
-					spd += .04;
-				} else if spd < wspd/2 {
-					spd += .1;
-				} else {
+				if spd < wspd/2 {
 					_vulto = instance_create_layer(x, y, layer, obj_rastro);
 					_vulto.image_alpha = .12;
+					_vulto.sprite_index = sprite_index;
+					spd += .08;
+				} else if spd < wspd/4 {
+					spd = wspd/4;
+				} else {
+					_vulto = instance_create_layer(x, y, layer, obj_rastro);
+					_vulto.image_alpha = .18;
 					_vulto.sprite_index = sprite_index;
 					spd += .2;
 				}

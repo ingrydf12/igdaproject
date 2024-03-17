@@ -42,14 +42,18 @@ function spd_player() {
 			_vulto.image_alpha = .09;
 			_vulto.sprite_index = sprite_index;
 			//Verifica a porcentagem da 'spd' do player, e se for menor que 50% do limite (wspd/2), então apenas aumentar gradativamente a 'spd' do jogador
-			if spd < wspd/4 {
-				spd += .08;
-			} else if spd < wspd/2 {
-				spd += .2;
-			} else {
-				//Se a 'spd' estiver na metade do limite, criar um rastro mais visível
+			if spd < wspd/2 {
+				//Se a 'spd' estiver com menos da metade do limite, criar um rastro visível
 				_vulto = instance_create_layer(x, y, layer, obj_rastro);
 				_vulto.image_alpha = .12;
+				_vulto.sprite_index = sprite_index;
+				spd += .08;
+			} else if spd < wspd/4 {
+				spd = wspd/4;
+			} else {
+				//Se a 'spd' estiver na metade (ou mais) do limite, criar um rastro mais visível
+				_vulto = instance_create_layer(x, y, layer, obj_rastro);
+				_vulto.image_alpha = .18;
 				_vulto.sprite_index = sprite_index;
 				spd += .4;
 			}
@@ -66,128 +70,6 @@ function spd_player() {
 	}
 }
 #endregion VERIFICAR VELOCIDADE
-
-#region MUDAR SPRITE
-function att_sprite_player(a) {
-	///@param {string} "string" Ação a ser executada: Ataque; Andar; Idle
-	switch a {
-		#region ATACAR
-		case "ATAQUE":
-			switch id_player { //Verificar qual player vai atacar baseado na tecla de ataque
-				case 0: //Player 1 Ataque
-					switch dir_atk {
-						case 0: //Direita
-							sprite_index = sjoa_atkright;
-						break;
-						case 2: //Esquerda
-							sprite_index = sjoa_atkleft;
-						break;
-						case 1: //Cima
-							sprite_index = sjoa_atkup;
-						break;
-						case 3: //Baixo
-							sprite_index = sjoa_atkdown;
-						break;
-					}
-				break;
-				case 1: //Player 2 Ataque
-					switch dir_atk {
-						case 0: //Direita
-							sprite_index = spoto_atkright;
-						break;
-						case 2: //Esquerda
-							sprite_index = spoto_atkleft;
-						break;
-						case 1: //Cima
-							sprite_index = spoto_atkup;
-						break;
-						case 3: //Baixo
-							sprite_index = spoto_atkdown;
-						break;
-					};
-				break;
-			}
-		break;
-		#endregion ATACAR
-		#region ANDAR
-		case "ANDAR":
-			switch id_player {
-				case 0: //Player 1 Andar
-					//Verificar se está andando para alguma direção e dizer seu quadrante
-					if direita {
-						sprite_index = sjoa_idleright;
-						dir_atk = 0;
-					} else if cima {
-						sprite_index = sjoa_idleup;
-						dir_atk = 1;
-					} else if esquerda {
-						sprite_index = sjoa_idleleft;
-						dir_atk = 2;
-					} else if baixo {
-						sprite_index = sjoa_idledown;
-						dir_atk = 3;
-					}
-				break;
-				case 1: //Player 2 Andar
-					//Verificar se está andando para alguma direção e dizer seu quadrante
-					if direita {
-						sprite_index = spoto_idleright;
-						dir_atk = 0;
-					} else if cima {
-						sprite_index = spoto_idleup;
-						dir_atk = 1;
-					} else if esquerda {
-						sprite_index = spoto_idleleft;
-						dir_atk = 2;
-					} else if baixo {
-						sprite_index = spoto_idledown;
-						dir_atk = 3;
-					}
-				break;
-			}
-		break;
-		#endregion ANDAR
-		#region IDLE
-		case "IDLE":
-			switch id_player { //Verificar qual player está atacando baseado na tecla de ataque
-				case 0: //Player 1 Idle
-					switch dir_atk {
-						case 0: //Direita
-							sprite_index = sjoa_idleright;
-						break;
-						case 2: //Esquerda
-							sprite_index = sjoa_idleleft;
-						break;
-						case 1: //Cima
-							sprite_index = sjoa_idleup;
-						break;
-						case 3: //Baixo
-							sprite_index = sjoa_idledown;
-						break;
-					}
-				break;
-				case 1: //Player 2 Idle
-					switch dir_atk {
-						case 0: //Direita
-							sprite_index = spoto_idleright;
-						break;
-						case 2: //Esquerda
-							sprite_index = spoto_idleleft;
-						break;
-						case 1: //Cima
-							sprite_index = spoto_idleup;
-						break;
-						case 3: //Baixo
-							sprite_index = spoto_idledown;
-						break;
-					}
-				break;
-			}
-		break;
-		#endregion IDLE
-	}
-}
-#endregion MUDAR SPRITE
 
 function andar() {
 	
@@ -223,7 +105,7 @@ function andar() {
 	
 	//Verificar tecla de ataque (tecla 'X' ou 'L')
 	if keyboard_check_pressed(ord(tecla_atk)) and alarm[1] <= 0 {
-		spd = 0; //Resetar a speed do player após bater
+		spd = wspd/2; //Resetar a speed do player após bater
 		image_index = 0; //Resetar frame da animação
 		
 		//Mudar a sprite, para ataque, de acordo com a direção que o player está olhando

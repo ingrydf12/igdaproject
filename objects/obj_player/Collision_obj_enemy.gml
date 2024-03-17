@@ -2,7 +2,7 @@
 if imune == false {
 	if hit == false {
 		hit = true;
-		spd = 0; //Resetar a speed após receber um golpe
+		spd = wspd/2; //Diminuir a speed após receber um golpe
 		
 		p_knockback_dir = point_direction(other.x, other.y, x, y);
 		p_knockback_spd = other.p_knockback_spd - knockback_resistence;

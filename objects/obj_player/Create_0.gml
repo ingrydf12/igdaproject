@@ -43,7 +43,8 @@ var grid = global.grid_players; //Variável local da grid global
 
 hp_max = grid[# Player.Vida, id_player]; //Vida máxima
 hp_atual = hp_max; //Vida
-wspd = grid[# Player.Speed, id_player]; //Speed
+wspd = grid[# Player.Speed, id_player]; //Walk Speed
+spd = wspd; //Speed
 dano_min = grid[# Player.DanoMin, id_player]; //Dano Mínimo
 dano_max = grid[# Player.DanoMax, id_player]; //Dano Máximo
 dano = irandom_range(dano_min, dano_max);
