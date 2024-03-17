@@ -17,6 +17,7 @@ imune_time = 180; //Quanto tempo o player fica imune
 hit = false; //verificar se foi acertado pelo inimigo
 dir_atk = -1; //Direção (em 4 quadrantes) do ataque do player
 ataque = false; //Variável que verifica se o player atacou ou não
+img_number_atk = 1;
 #endregion VARIÁVEIS INDEPENDENTES
 
 #region DADOS SEM GRID

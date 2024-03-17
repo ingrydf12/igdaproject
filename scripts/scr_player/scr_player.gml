@@ -117,23 +117,51 @@ function andar() {
 }
 
 function atacar() {
-	if image_index >= 1 {
+	if image_index >= img_number_atk { //Verificar se a imagem do sprite atual é a sprite de ataque para spawnar a hitbox
 		if ataque == false {
+			#region DETERMINAR X E Y DA HITBOX
+			//Determinar X e Y (de distância) para surgir a hitbox de atk
+			var xde = 40;	//X Direita e Esquerda
+			var yde = 20;	//Y Direita e Esquerda
+			var yc = 40;	//Y Cima
+			var yb = 60;	//Y Baixo
+			switch id_player {
+				case 1: //Personagem 1
+					xde = 40;
+					yde = 20;
+					yc = 40;
+					yb = 60;
+				break;
+				case 2: //Personagem 2
+					xde = 40;
+					yde = 10;
+					yc = 40;
+					yb = 60;
+				break;
+				case 3: //Personagem 3
+					xde = 60;
+					yde = 10;
+					yc = 40;
+					yb = 60;
+				break;
+			}
+			#endregion DETERMINAR X E Y DA HHITBOX
+			
 			switch dir_atk {
 				case 0: //Direita
-					var _i = instance_create_layer(x + 40, y + 20, layer, obj_hitatk_rl);
+					var _i = instance_create_layer(x + xde, y + yde, layer, obj_hitatk_rl);
 					_i.p_id = self;
 				break;
 				case 2: //Esquerda
-					_i = instance_create_layer(x - 40, y + 20, layer, obj_hitatk_rl);
+					_i = instance_create_layer(x - xde, y + yde, layer, obj_hitatk_rl);
 					_i.p_id = self;
 				break;
 				case 1: //Cima
-					_i = instance_create_layer(x, y - 40, layer, obj_hitatk_ud);
+					_i = instance_create_layer(x, y - yc, layer, obj_hitatk_ud);
 					_i.p_id = self;
 				break;
 				case 3: //Baixo
-					_i = instance_create_layer(x, y + 60, layer, obj_hitatk_ud);
+					_i = instance_create_layer(x, y + yb, layer, obj_hitatk_ud);
 					_i.p_id = self;
 				break;
 			}
