@@ -26,6 +26,7 @@ function fim_animacao(){
 		return _image + _spd >= sprite_get_number(_sprite);
 }
 
+#region WAVES
 //WAVES INIMIGOS
 function att_wave() {
 	randomize();
@@ -66,7 +67,7 @@ function decisao_spawn() {
 		acao = att_wave;
 	}
 }
-
+//SPAWNAR INIMIGO
 function inimigo_spawn() {
 	randomize();
 	
@@ -80,7 +81,7 @@ function inimigo_spawn() {
 	var p = instance_nearest(xx, yy, obj_player); //jogador mais próximo
 	
 	//evitar spawnar muito próximo a um player
-	if point_distance(xx, yy, p.x, p.y) <= 220 {
+	if point_distance(xx, yy, p.x, p.y) <= 340 {
 		exit;
 	}
 	
