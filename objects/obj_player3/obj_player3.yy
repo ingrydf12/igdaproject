@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"splayer3",
-    "path":"sprites/splayer3/splayer3.yy",
+    "name":"spoto",
+    "path":"sprites/spoto/spoto.yy",
   },
   "spriteMaskId":null,
   "visible":true,

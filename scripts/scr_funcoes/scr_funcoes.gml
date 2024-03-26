@@ -26,6 +26,22 @@ function att_sprite_player(acao) {
 				case 2: //Player 2 Ataque
 					switch dir_atk {
 						case 0: //Direita
+							sprite_index = skabuto_atkright;
+						break;
+						case 2: //Esquerda
+							sprite_index = skabuto_atkleft;
+						break;
+						case 1: //Cima
+							sprite_index = skabuto_atkup;
+						break;
+						case 3: //Baixo
+							sprite_index = skabuto_atkdown;
+						break;
+					};
+				break;
+				case 3: //Player 3 Ataque
+					switch dir_atk {
+						case 0: //Direita
 							sprite_index = spoto_atkright;
 						break;
 						case 2: //Esquerda
@@ -36,22 +52,6 @@ function att_sprite_player(acao) {
 						break;
 						case 3: //Baixo
 							sprite_index = spoto_atkdown;
-						break;
-					};
-				break;
-				case 3: //Player 3 Ataque
-					switch dir_atk {
-						case 0: //Direita
-							sprite_index = splayer3;
-						break;
-						case 2: //Esquerda
-							sprite_index = splayer3;
-						break;
-						case 1: //Cima
-							sprite_index = splayer3;
-						break;
-						case 3: //Baixo
-							sprite_index = splayer3;
 						break;
 					};
 				break;
@@ -80,6 +80,22 @@ function att_sprite_player(acao) {
 				case 2: //Player 2 Andar
 					//Verificar se está andando para alguma direção e dizer seu quadrante
 					if direita {
+						sprite_index = skabuto_idleright;
+						dir_atk = 0;
+					} else if cima {
+						sprite_index = skabuto_idleup;
+						dir_atk = 1;
+					} else if esquerda {
+						sprite_index = skabuto_idleleft;
+						dir_atk = 2;
+					} else if baixo {
+						sprite_index = skabuto_idledown;
+						dir_atk = 3;
+					}
+				break;
+				case 3: //Player 3 Andar
+					//Verificar se está andando para alguma direção e dizer seu quadrante
+					if direita {
 						sprite_index = spoto_idleright;
 						dir_atk = 0;
 					} else if cima {
@@ -90,22 +106,6 @@ function att_sprite_player(acao) {
 						dir_atk = 2;
 					} else if baixo {
 						sprite_index = spoto_idledown;
-						dir_atk = 3;
-					}
-				break;
-				case 3: //Player 3 Andar
-					//Verificar se está andando para alguma direção e dizer seu quadrante
-					if direita {
-						sprite_index = splayer3;
-						dir_atk = 0;
-					} else if cima {
-						sprite_index = splayer3;
-						dir_atk = 1;
-					} else if esquerda {
-						sprite_index = splayer3;
-						dir_atk = 2;
-					} else if baixo {
-						sprite_index = splayer3;
 						dir_atk = 3;
 					}
 				break;
@@ -134,6 +134,22 @@ function att_sprite_player(acao) {
 				case 2: //Player 2 Idle
 					switch dir_atk {
 						case 0: //Direita
+							sprite_index = skabuto_idleright;
+						break;
+						case 2: //Esquerda
+							sprite_index = skabuto_idleleft;
+						break;
+						case 1: //Cima
+							sprite_index = skabuto_idleup;
+						break;
+						case 3: //Baixo
+							sprite_index = skabuto_idledown;
+						break;
+					}
+				break;
+				case 3: //Player 3 Idle
+					switch dir_atk {
+						case 0: //Direita
 							sprite_index = spoto_idleright;
 						break;
 						case 2: //Esquerda
@@ -144,22 +160,6 @@ function att_sprite_player(acao) {
 						break;
 						case 3: //Baixo
 							sprite_index = spoto_idledown;
-						break;
-					}
-				break;
-				case 3: //Player 3 Idle
-					switch dir_atk {
-						case 0: //Direita
-							sprite_index = splayer3;
-						break;
-						case 2: //Esquerda
-							sprite_index = splayer3;
-						break;
-						case 1: //Cima
-							sprite_index = splayer3;
-						break;
-						case 3: //Baixo
-							sprite_index = splayer3;
 						break;
 					}
 				break;

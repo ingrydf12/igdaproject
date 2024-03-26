@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spoto_idledown",
-    "path":"sprites/spoto_idledown/spoto_idledown.yy",
+    "name":"skabuto_idledown",
+    "path":"sprites/skabuto_idledown/skabuto_idledown.yy",
   },
   "spriteMaskId":null,
   "visible":true,
