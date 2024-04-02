@@ -31,12 +31,7 @@ knockback_spd = 20;
 knockback_resistence = 4;
 tecla_atk = "";
 */
-#endregion DADOS SEM GRID
-
-#region Selection
-global.player = 0;
-
-#endregion Selection
+#endregion DADOS SEM GRIDo
 
 #region DADOS POR GRID
 var id_p = id_player - 1; //Id do player menos 1

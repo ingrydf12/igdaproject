@@ -176,15 +176,15 @@ function atacar() {
 		//Mudar para o estado de andar
 		estado = andar;
 		//Tempo para atacar novamente (em frames)
-		switch tecla_atk {
-			case "X": //Player 1
+		switch id_player {
+			case 1: //Player 1
 				alarm[1] = 50;
 			break;
-			case "L": //Player 2
+			case 2: //Player 2
 				alarm[1] = 15;
 			break;
-			case "V": //Player 3
-				alarm[1] = 60;
+			case 3: //Player 3
+				alarm[1] = 8;
 			break;
 		}
 		

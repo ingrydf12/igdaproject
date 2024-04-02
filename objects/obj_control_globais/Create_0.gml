@@ -8,4 +8,6 @@ global.debug = false;
 global.player1 = 1;
 global.player2 = 2;
 global.player3 = 3;
+
+global.player_selector = 0;
 #endregion

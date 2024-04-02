@@ -1,17 +1,14 @@
-global.player_selector = 1;
-//players = array_create(0);
-
 image_speed = 0;
 
-switch id_personagem {
+switch id_quantia {
 	default:
-		sprite_index = seljuknight;
+		image_index = 0;
 		break;
 	case 2:
-		sprite_index = selkaburai;
+		image_index = 1;
 		break;
 	case 3:
-		sprite_index = seljuknight;
+		image_index = 2;
 		break;
 }
 /*
