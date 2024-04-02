@@ -1,7 +1,7 @@
 /// @description Insert description here
 id_player = global.player2; //Id do player menos 1
+tecla_atk = mouse_check_button_pressed(mb_left);
 event_inherited();
-tecla_atk = "L";
 
 #region COMANDO BÁSICO (SEM SELEÇÃO DE PERSONAGEM)
 /*

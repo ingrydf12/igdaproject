@@ -104,7 +104,7 @@ function andar() {
 	colisao();
 	
 	//Verificar tecla de ataque (tecla 'X' ou 'L')
-	if keyboard_check_pressed(ord(tecla_atk)) and alarm[1] <= 0 {
+	if tecla_atk and alarm[1] <= 0 {
 		spd = 0; //Resetar a speed do player após bater
 		image_index = 0; //Resetar frame da animação
 		

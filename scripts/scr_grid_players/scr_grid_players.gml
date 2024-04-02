@@ -21,9 +21,9 @@ function montar_grid_players() {
 		#region ARENA
 		case "ARENA":
 		
-			ds_grid_add_player(1,	100, 5.5, 18, 27, 39, 10, "X", 0, sjoa_idledown); //Valores do Personagem 1
-			ds_grid_add_player(2,	85, 8, 12, 22, 24, 3.5, "L", 0, spoto_idledown); //Valores do Personagem 2
-			ds_grid_add_player(3,	75, 12, 10, 21, 18, 2, "V", 0, splayer3); //Valores do Personagem 3
+			ds_grid_add_player(1,	100, 5.5, 18, 27, 39, 10, keyboard_check_pressed(ord("X")), 0, sjoa_idledown); //Valores do Personagem 1
+			ds_grid_add_player(2,	85, 8, 12, 22, 24, 3.5, mouse_check_button_pressed(mb_left), 0, skabuto_idledown); //Valores do Personagem 2
+			ds_grid_add_player(3,	75, 12, 10, 21, 18, 2, keyboard_check_pressed(ord("K")), 0, spoto_idledown); //Valores do Personagem 3
 		break;
 		#endregion ARENA
 	

@@ -1,21 +1,18 @@
-player = 0;
+global.player_selector = 1;
 
-// @ingryd"
-//switch(global.player){
-//    case 1: 
-//		//joa (obj_player1)
-//        instance_create_layer(x, y, layer, obj_player1);
-//        break;
-//    case 2: 
-//        // poto (obj_player2)
-//        instance_create_layer(x, y, layer, obj_player2);
-//        break;
-//}
+image_speed = 0;
 
-
-
-
-
+switch id_personagem {
+	default:
+		sprite_index = seljuknight;
+		break;
+	case 2:
+		sprite_index = selkaburai;
+		break;
+	case 3:
+		sprite_index = seljuknight;
+		break;
+}
 /*
 ====================================================@luska:
  Usar 'global.player1' para se referir ao Personagem escolhido pelo player 1

@@ -1,7 +1,7 @@
 /// @description Insert description here
 id_player = global.player1; //Id do player
 event_inherited();
-tecla_atk = "X";
+tecla_atk = keyboard_check_pressed(ord("X"));
 
 #region COMANDO BÁSICO (SEM SELEÇÃO DE PERSONAGEM)
 /*
