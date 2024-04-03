@@ -12,8 +12,8 @@
   "name":"obj_selector",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controles",
-    "path":"folders/Objects/System/Controles.yy",
+    "name":"Menu",
+    "path":"folders/Objects/System/Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
