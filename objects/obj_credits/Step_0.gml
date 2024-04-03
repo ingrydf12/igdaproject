@@ -1,20 +1,16 @@
 // @ingryd" 
-var rw = room_width;
-var rh = room_height;
-var sw = sprite_get_width(sbutton_credits) * escala;
-var sh = sprite_get_height(sbutton_credits) * escala;
+var obj_x = 684;
+var obj_y= 576;
+var sw = sprite_get_width(sbutton_credits)
+var sh = sprite_get_height(sbutton_credits)
 
-if point_in_rectangle(mouse_x, mouse_y, rw/2 - sw/2, rh/2 - sh/2, rw/2 + sw/2, rh/2 + sh/2) {
-	image_xscale = lerp(escala*2, escala, .5);
-	image_yscale = lerp(escala*2, escala, .5);
+if point_in_rectangle(mouse_x, mouse_y, obj_x - sw / 2, obj_y - sh / 2, obj_x + sw / 2, obj_y + sh / 2) {
 	image_index = 1;
 	
 	if mouse_check_button_pressed(mb_left) {
-		room_goto(rmodos);
+		room_goto(rcredits);
 	}
 	
 } else {
-	image_xscale = lerp(escala, escala*1.5, .5);
-	image_yscale = lerp(escala, escala*1.5, .5);
-	
 	image_index = 0;
+}
