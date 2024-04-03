@@ -10,4 +10,8 @@ global.player2 = 2;
 global.player3 = 3;
 
 global.player_selector = 0;
+
+global.p1_win = 0;
+global.p2_win = 0;
+global.p3_win = 0;
 #endregion
