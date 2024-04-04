@@ -119,6 +119,7 @@
     {"name":"spoto_idleleft","order":3,"path":"sprites/spoto_idleleft/spoto_idleleft.yy",},
     {"name":"spoto_idleright","order":2,"path":"sprites/spoto_idleright/spoto_idleright.yy",},
     {"name":"spoto_idleup","order":1,"path":"sprites/spoto_idleup/spoto_idleup.yy",},
+    {"name":"selpotonormal","order":6,"path":"sprites/selpotonormal/selpotonormal.yy",},
     {"name":"sreinicio","order":1,"path":"sprites/sreinicio/sreinicio.yy",},
     {"name":"stextmodo","order":4,"path":"sprites/stextmodo/stextmodo.yy",},
     {"name":"teste","order":4,"path":"sprites/teste/teste.yy",},

@@ -163,6 +163,7 @@
     {"id":{"name":"spoto_idleright","path":"sprites/spoto_idleright/spoto_idleright.yy",},},
     {"id":{"name":"spoto_idleup","path":"sprites/spoto_idleup/spoto_idleup.yy",},},
     {"id":{"name":"spoto","path":"sprites/spoto/spoto.yy",},},
+    {"id":{"name":"selpotonormal","path":"sprites/selpotonormal/selpotonormal.yy",},},
     {"id":{"name":"sreinicio","path":"sprites/sreinicio/sreinicio.yy",},},
     {"id":{"name":"srevanche","path":"sprites/srevanche/srevanche.yy",},},
     {"id":{"name":"stextmodo","path":"sprites/stextmodo/stextmodo.yy",},},

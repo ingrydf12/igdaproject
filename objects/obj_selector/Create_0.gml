@@ -11,7 +11,7 @@ switch id_personagem {
 		sprite_index = selkaburai;
 		break;
 	case 3:
-		sprite_index = seljuknight;
+		sprite_index = selpotonormal;
 		break;
 }
 /*
