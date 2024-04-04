@@ -11,6 +11,7 @@ if point_in_rectangle(mouse_x, mouse_y, rw/2 - sw/2, rh/2 - sh/2, rw/2 + sw/2, r
 	image_index = 1;
 	
 	if mouse_check_button_pressed(mb_left) {
+		audio_play_sound(sclick,1,false)
 		room_goto(rmodos);
 	}
 	
