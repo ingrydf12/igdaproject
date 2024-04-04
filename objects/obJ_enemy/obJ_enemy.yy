@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"senemytest",
-    "path":"sprites/senemytest/senemytest.yy",
+    "name":"sinimigo",
+    "path":"sprites/sinimigo/sinimigo.yy",
   },
   "spriteMaskId":null,
   "visible":true,

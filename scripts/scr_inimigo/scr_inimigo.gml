@@ -62,6 +62,8 @@ function spd_inimigo() {
 				_vulto.image_alpha = .26;
 				_vulto.sprite_index = sprite_index;
 			}
+			image_angle = dir;
+			
 		} else {
 			spd = 0;
 			path_end();
@@ -122,8 +124,6 @@ function inimigo_andar(){
 		dir = point_direction(x, y, dest_x, dest_y);
 		hspd = lengthdir_x(spd, dir);
 		vspd = lengthdir_y(spd, dir);
-	
-		
 	
 		//Caminho a ser seguido pelo inimigo
 		if mp_grid_path(obj_mapa.grid_mapa,caminho,x1,y1,dest_x,dest_y,true) {

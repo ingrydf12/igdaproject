@@ -8,27 +8,30 @@ if players == 1 {
     var player2 = instance_find(obj_player2, 0);
     var player3 = instance_find(obj_player3, 0);
     
-	p1 = player1 != noone;
-	p2 = player2 != noone;
-	p3 = player3 != noone;
+	var p1 = player1 != noone;
+	var p2 = player2 != noone;
+	var p3 = player3 != noone;
 	
 	switch (true) {
     case (p1):
         global.p1_win += 1;
-		instance_create_layer(704,384,"end", obj_layout_end)
+		var p1w = instance_create_layer(704,384,"end", obj_layout_end);
+		p1w.vencedor = 1;
 		instance_destroy()
         break;
         
     case (p2):
         global.p2_win += 1;
-		instance_create_layer(704,384,"end", obj_layout_end)
-		instance_destroy()
+		var p2w = instance_create_layer(704,384,"end", obj_layout_end);
+		p2w.vencedor = 2;
+		instance_destroy();
 		break;
         
     case (p3):
         global.p3_win += 1;
-		instance_create_layer(704,384,"end", obj_layout_end)
-		instance_destroy()
+		var p3w = instance_create_layer(704,384,"end", obj_layout_end);
+		p3w.vencedor = 3;
+		instance_destroy();
 		break;
         
     default:
