@@ -63,6 +63,7 @@
     {"name":"obj_spawn2","order":2,"path":"objects/obj_spawn2/obj_spawn2.yy",},
     {"name":"obj_spawn3","order":3,"path":"objects/obj_spawn3/obj_spawn3.yy",},
     {"name":"obj_vd_credits","order":1,"path":"objects/obj_vd_credits/obj_vd_credits.yy",},
+    {"name":"obj_sair","order":2,"path":"objects/obj_sair/obj_sair.yy",},
     {"name":"rarena","order":3,"path":"rooms/rarena/rarena.yy",},
     {"name":"rcredits","order":7,"path":"rooms/rcredits/rcredits.yy",},
     {"name":"rinicio","order":1,"path":"rooms/rinicio/rinicio.yy",},

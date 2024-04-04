@@ -58,8 +58,8 @@
   },
   "name":"smashgame",
   "resources":[
-    {"id":{"name":"fontmenu","path":"fonts/fontmenu/fontmenu.yy",},},
     {"id":{"name":"fontend","path":"fonts/fontend/fontend.yy",},},
+    {"id":{"name":"fontmenu","path":"fonts/fontmenu/fontmenu.yy",},},
     {"id":{"name":"Debug","path":"notes/Debug/Debug.yy",},},
     {"id":{"name":"GameOver e Pausa","path":"notes/GameOver e Pausa/GameOver e Pausa.yy",},},
     {"id":{"name":"Inimigo","path":"notes/Inimigo/Inimigo.yy",},},
@@ -95,6 +95,7 @@
     {"id":{"name":"obj_spawn3","path":"objects/obj_spawn3/obj_spawn3.yy",},},
     {"id":{"name":"obj_spawner","path":"objects/obj_spawner/obj_spawner.yy",},},
     {"id":{"name":"obj_vd_credits","path":"objects/obj_vd_credits/obj_vd_credits.yy",},},
+    {"id":{"name":"obj_sair","path":"objects/obj_sair/obj_sair.yy",},},
     {"id":{"name":"rarena","path":"rooms/rarena/rarena.yy",},},
     {"id":{"name":"rcredits","path":"rooms/rcredits/rcredits.yy",},},
     {"id":{"name":"rinicio","path":"rooms/rinicio/rinicio.yy",},},

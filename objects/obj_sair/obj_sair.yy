@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_layout_end",
+  "%Name":"obj_sair",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_layout_end",
+  "name":"obj_sair",
   "overriddenProperties":[],
   "parent":{
     "name":"End (Arena)",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"slayoutend",
-    "path":"sprites/slayoutend/slayoutend.yy",
+    "name":"sbtnmenu",
+    "path":"sprites/sbtnmenu/sbtnmenu.yy",
   },
   "spriteMaskId":null,
   "visible":true,
