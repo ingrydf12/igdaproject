@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_end_game",
+  "%Name":"obj_revanche",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_end_game",
+  "name":"obj_revanche",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controles",
-    "path":"folders/Objects/System/Controles.yy",
+    "name":"End (Arena)",
+    "path":"folders/Objects/End (Arena).yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"srevanche",
+    "path":"sprites/srevanche/srevanche.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

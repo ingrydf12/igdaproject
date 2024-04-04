@@ -5,8 +5,8 @@ var players = instance_number(obj_player);
 if players == 1 {
     //encontra id de cada jogador
     var player1 = instance_find(obj_player1, 0);
-    var player2 = instance_find(obj_player2, 1);
-    var player3 = instance_find(obj_player3, 2);
+    var player2 = instance_find(obj_player2, 0);
+    var player3 = instance_find(obj_player3, 0);
     
 	p1 = player1 != noone;
 	p2 = player2 != noone;
@@ -14,22 +14,22 @@ if players == 1 {
 	
 	switch (true) {
     case (p1):
-		show_message("O jogador 1 está sozinho na sala.");
         global.p1_win += 1;
-        //draw_sprite(slayoutend,sprite_index, 704, 384) // Desenha o sprite no layoutend
-		//draw_set_font(fontmenu);
-        //draw_text(room_width/2,room_height/2 , "PLAYER 1 Venceu!"); // Adiciona o texto centralizado
+		instance_create_layer(704,384,"end", obj_layout_end)
+		instance_destroy()
         break;
         
     case (p2):
-        show_message("O jogador 2 está sozinho na sala.");
         global.p2_win += 1;
-        break;
+		instance_create_layer(704,384,"end", obj_layout_end)
+		instance_destroy()
+		break;
         
     case (p3):
-        show_message("O jogador 3 está sozinho na sala.");
         global.p3_win += 1;
-        break;
+		instance_create_layer(704,384,"end", obj_layout_end)
+		instance_destroy()
+		break;
         
     default:
         show_message("Nenhum jogador identificado.");

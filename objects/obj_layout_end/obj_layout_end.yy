@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_end_game",
+  "%Name":"obj_layout_end",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_end_game",
+  "name":"obj_layout_end",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controles",
-    "path":"folders/Objects/System/Controles.yy",
+    "name":"End (Arena)",
+    "path":"folders/Objects/End (Arena).yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"slayoutend",
+    "path":"sprites/slayoutend/slayoutend.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
