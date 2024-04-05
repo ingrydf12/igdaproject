@@ -1,3 +1,3 @@
 // @ingryd" 
-video_open("vdcredits.mp4")
-video_enable_loop(true)
+video_open("vdcreditos.mp4");
+video_enable_loop(true);
