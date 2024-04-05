@@ -42,3 +42,5 @@ if global.debug and keyboard_check(vk_lcontrol) {
 		_p = -1;
 	}
 }
+
+gamepad_connect();
