@@ -34,36 +34,40 @@ function spd_player() {
 	//Verifica se o player está se movendo (horizontalmente ou verticalmente)
 	if hspd != 0 or vspd != 0 {
 		
-		//Se estiver, verificar a 'spd' do jogador
-		if spd < wspd {
-			//Efeito de 'movimentação' -> Cria um rastro dando a ideia de movimento no objeto
-			//Se for menor que o limite (walk speed), criar um rastro inicial (Efeito de 'movimentação')
-			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
-			_vulto.image_alpha = .09;
-			_vulto.sprite_index = sprite_index;
-			//Verifica a porcentagem da 'spd' do player, e se for menor que 50% do limite (wspd/2), então apenas aumentar gradativamente a 'spd' do jogador
-			if spd < wspd/2 {
-				//Se a 'spd' estiver com menos da metade do limite, criar um rastro visível
-				_vulto = instance_create_layer(x, y, layer, obj_rastro);
-				_vulto.image_alpha = .12;
-				_vulto.sprite_index = sprite_index;
-				spd += .08;
-			} else if spd < wspd/4 {
-				spd = wspd/4;
-			} else {
-				//Se a 'spd' estiver na metade (ou mais) do limite, criar um rastro mais visível
-				_vulto = instance_create_layer(x, y, layer, obj_rastro);
-				_vulto.image_alpha = .18;
-				_vulto.sprite_index = sprite_index;
-				spd += .4;
-			}
+		////Se estiver, verificar a 'spd' do jogador
+		//if spd < wspd {
+		//	//Efeito de 'movimentação' -> Cria um rastro dando a ideia de movimento no objeto
+		//	//Se for menor que o limite (walk speed), criar um rastro inicial (Efeito de 'movimentação')
+		//	var _vulto = instance_create_layer(x, y, layer, obj_rastro);
+		//	_vulto.image_alpha = .09;
+		//	_vulto.sprite_index = sprite_index;
+		//	//Verifica a porcentagem da 'spd' do player, e se for menor que 50% do limite (wspd/2), então apenas aumentar gradativamente a 'spd' do jogador
+		//	if spd < wspd/2 {
+		//		//Se a 'spd' estiver com menos da metade do limite, criar um rastro visível
+		//		_vulto = instance_create_layer(x, y, layer, obj_rastro);
+		//		_vulto.image_alpha = .12;
+		//		_vulto.sprite_index = sprite_index;
+		//		spd += .08;
+		//	} else if spd < wspd/4 {
+		//		spd = wspd/4;
+		//	} else {
+		//		//Se a 'spd' estiver na metade (ou mais) do limite, criar um rastro mais visível
+		//		_vulto = instance_create_layer(x, y, layer, obj_rastro);
+		//		_vulto.image_alpha = .18;
+		//		_vulto.sprite_index = sprite_index;
+		//		spd += .4;
+		//	}
 			
-		} else {
-			//Se a 'spd' estiver no limite, criar um rastro altamente visível
-			var _vulto = instance_create_layer(x, y, layer, obj_rastro);
-			_vulto.image_alpha = .26;
-			_vulto.sprite_index = sprite_index;
-		}
+		//} else {
+		//	//Se a 'spd' estiver no limite, criar um rastro altamente visível
+		//	var _vulto = instance_create_layer(x, y, layer, obj_rastro);
+		//	_vulto.image_alpha = .26;
+		//	_vulto.sprite_index = sprite_index;
+		//}
+		var _vulto = instance_create_layer(x, y, layer, obj_rastro);
+		_vulto.image_alpha = .26;
+		_vulto.sprite_index = sprite_index;
+		spd = wspd;
 	} else {
 		//Se não estiver em movimento, zerar a 'spd'
 		spd = 0;
