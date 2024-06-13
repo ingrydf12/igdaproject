@@ -1,11 +1,10 @@
 # Battle Bettle
 
-<center>
-
-![Imagem](https://i.gifer.com/8Z1O.gif)
-
-<sub align="center">Jogo criado durante ciclo 2024.1 da Academia IGDA, com a temática de beat'em'up.</sub>
-
+<div align="center">
+<h6>Jogo criado durante ciclo 2024.1 da Academia IGDA, com a temática de beat'em'up.</h6>
+<br>
+  
+![Imagem](https://steamuserimages-a.akamaihd.net/ugc/260463172023923412/107483965FBB965E06685BD69D6748F95AFC3A4B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false)
 </center>
 
 <div align=center>
@@ -32,7 +31,6 @@ Attack: K or X (Gamepad)
 
 
 <h3 align=center>Equipe </h3>
-
 
 <div align="center">
 
